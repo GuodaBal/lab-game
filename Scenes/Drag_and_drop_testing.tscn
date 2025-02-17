@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm0gyyknk12jh"]
+
+[ext_resource type="Script" path="res://Scripts/level_completion.gd" id="1_4ihcf"]
+[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="1_qnb4a"]
+[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="2_vcynd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ct461"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="GDScript" id="GDScript_fs33p"]
+script/source = "extends Sprite2D
+
+@export var fits_id = 0
+@export var correct_id = 0
+
+var is_selected = false
+var click_offset = Vector2(0,0)
+var connected_to = null
+
+
+
+func _process(delta: float) -> void:
+	if is_selected:
+		position = lerp(position, get_global_mouse_position() + click_offset, delta*10)
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_action_just_pressed(\"click\"):# && !GlobalVariables.is_mouse_busy:
+		#GlobalVariables.is_mouse_busy = true
+		is_selected = true
+		click_offset = position - get_global_mouse_position()
+		if connected_to != null:
+			connected_to.occupied = false
+		connected_to = null
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_released(\"click\"):
+		#GlobalVariables.is_mouse_busy = false
+		is_selected = false
+		for area in $Area2D.get_overlapping_areas():
+			var node = area.get_parent()
+			if node.fits_id == fits_id && node.occupied == false:
+				position = node.position
+				connected_to = node
+				node.occupied = true
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7av0v"]
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cf0s6"]
+width = 50
+height = 50
+noise = SubResource("FastNoiseLite_7av0v")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4ihcf")
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_qnb4a")]
+modulate = Color(1, 0.55708, 0.993391, 1)
+position = Vector2(493, 451)
+
+[node name="Sprite2D2" parent="." instance=ExtResource("1_qnb4a")]
+position = Vector2(589, 78)
+texture = SubResource("CompressedTexture2D_ct461")
+script = SubResource("GDScript_fs33p")
+correct_id = 1
+
+[node name="Item_destination" parent="." instance=ExtResource("2_vcynd")]
+position = Vector2(870, 68)
+
+[node name="Item_destination2" parent="." instance=ExtResource("2_vcynd")]
+position = Vector2(865, 230)
+texture = SubResource("NoiseTexture2D_cf0s6")
+correct_id = 1
