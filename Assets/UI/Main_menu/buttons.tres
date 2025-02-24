@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dfh7fbwsij8h2"]
+
+[ext_resource type="StyleBox" uid="uid://cmh52idultakh" path="res://Assets/UI/Main_menu/button_hover_pressed.tres" id="1_mf4ey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mrce"]
+
+[resource]
+Button/styles/focus = ExtResource("1_mf4ey")
+Button/styles/hover = ExtResource("1_mf4ey")
+Button/styles/normal = SubResource("StyleBoxEmpty_1mrce")
+Button/styles/pressed = ExtResource("1_mf4ey")

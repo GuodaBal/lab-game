@@ -15,10 +15,12 @@ texture = SubResource("NoiseTexture2D_1uq45")
 script = ExtResource("1_7a3tt")
 
 [node name="Area2D" type="Area2D" parent="."]
-z_index = -1
+z_index = -2
 collision_layer = 2
 script = ExtResource("1_xjxnw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_jee33")
+metadata/_edit_lock_ = true
