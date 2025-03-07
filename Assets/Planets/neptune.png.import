@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1b4hx3vqr23u"
-path="res://.godot/imported/mercury.png-7abff3951de1616a83682dc7c636b9bd.ctex"
+uid="uid://2c60jvfft2f6"
+path="res://.godot/imported/neptune.png-30af32b7a62f72599dc641023d5a5659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_level/mercury.png"
-dest_files=["res://.godot/imported/mercury.png-7abff3951de1616a83682dc7c636b9bd.ctex"]
+source_file="res://Assets/Planets/neptune.png"
+dest_files=["res://.godot/imported/neptune.png-30af32b7a62f72599dc641023d5a5659.ctex"]
 
 [params]
 

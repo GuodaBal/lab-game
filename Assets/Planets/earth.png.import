@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckwf2ks8amcu5"
-path="res://.godot/imported/jupiter.png-d48e37ff128d845ef73719a00a2e0cb4.ctex"
+uid="uid://cehkhcjnkt3q6"
+path="res://.godot/imported/earth.png-6ec022c8e6537af8645fc8ff8caea52f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_level/jupiter.png"
-dest_files=["res://.godot/imported/jupiter.png-d48e37ff128d845ef73719a00a2e0cb4.ctex"]
+source_file="res://Assets/Planets/earth.png"
+dest_files=["res://.godot/imported/earth.png-6ec022c8e6537af8645fc8ff8caea52f.ctex"]
 
 [params]
 

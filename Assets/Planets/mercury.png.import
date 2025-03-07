@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cehkhcjnkt3q6"
-path="res://.godot/imported/earth.png-8692e39a39b4918137a865aa14289164.ctex"
+uid="uid://1b4hx3vqr23u"
+path="res://.godot/imported/mercury.png-eb45f1ace83a540def5bfcaa481f52ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_level/earth.png"
-dest_files=["res://.godot/imported/earth.png-8692e39a39b4918137a865aa14289164.ctex"]
+source_file="res://Assets/Planets/mercury.png"
+dest_files=["res://.godot/imported/mercury.png-eb45f1ace83a540def5bfcaa481f52ca.ctex"]
 
 [params]
 

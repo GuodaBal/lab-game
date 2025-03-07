@@ -1,17 +1,17 @@
-[gd_scene load_steps=32 format=3 uid="uid://bm0gyyknk12jh"]
+[gd_scene load_steps=31 format=3 uid="uid://bm0gyyknk12jh"]
 
-[ext_resource type="Script" path="res://Scripts/level_completion.gd" id="1_4ihcf"]
-[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="1_qnb4a"]
-[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="2_vcynd"]
-[ext_resource type="Texture2D" uid="uid://1b4hx3vqr23u" path="res://Assets/Test_level/mercury.png" id="4_7mu4s"]
-[ext_resource type="Texture2D" uid="uid://bhj16fw22qtw6" path="res://Assets/Test_level/venus.png" id="5_iuhxk"]
-[ext_resource type="Texture2D" uid="uid://cehkhcjnkt3q6" path="res://Assets/Test_level/earth.png" id="6_tifmc"]
-[ext_resource type="Texture2D" uid="uid://cpnkc0dhcdgba" path="res://Assets/Test_level/mars.png" id="7_5juk1"]
-[ext_resource type="Texture2D" uid="uid://ckwf2ks8amcu5" path="res://Assets/Test_level/jupiter.png" id="8_3pcgk"]
-[ext_resource type="Texture2D" uid="uid://b5x8q1kbxkn1f" path="res://Assets/Test_level/saturn.png" id="9_grrph"]
-[ext_resource type="Texture2D" uid="uid://c5etfkcccc3ew" path="res://Assets/Test_level/uranus.png" id="10_t1asw"]
-[ext_resource type="Texture2D" uid="uid://2c60jvfft2f6" path="res://Assets/Test_level/neptune.png" id="11_k22hu"]
-[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="12_rq7vt"]
+[ext_resource type="Script" path="res://Scripts/level_completion.gd" id="1_1tdm5"]
+[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_j6wgn"]
+[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_ieqid"]
+[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_4cwf2"]
+[ext_resource type="Texture2D" uid="uid://1b4hx3vqr23u" path="res://Assets/Planets/mercury.png" id="5_cert6"]
+[ext_resource type="Texture2D" uid="uid://bhj16fw22qtw6" path="res://Assets/Planets/venus.png" id="6_0uped"]
+[ext_resource type="Texture2D" uid="uid://cehkhcjnkt3q6" path="res://Assets/Planets/earth.png" id="7_jxn4j"]
+[ext_resource type="Texture2D" uid="uid://cpnkc0dhcdgba" path="res://Assets/Planets/mars.png" id="8_rdmlx"]
+[ext_resource type="Texture2D" uid="uid://ckwf2ks8amcu5" path="res://Assets/Planets/jupiter.png" id="9_i8qwj"]
+[ext_resource type="Texture2D" uid="uid://b5x8q1kbxkn1f" path="res://Assets/Planets/saturn.png" id="10_s5mug"]
+[ext_resource type="Texture2D" uid="uid://c5etfkcccc3ew" path="res://Assets/Planets/uranus.png" id="11_jkwae"]
+[ext_resource type="Texture2D" uid="uid://2c60jvfft2f6" path="res://Assets/Planets/neptune.png" id="12_7rkg7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jjmxk"]
 
@@ -41,46 +41,8 @@ radius = 503.121
 [sub_resource type="CircleShape2D" id="CircleShape2D_3dfko"]
 radius = 507.316
 
-[sub_resource type="GDScript" id="GDScript_fs33p"]
-script/source = "extends Sprite2D
-
-@export var fits_id = 0
-@export var correct_id = 0
-
-var is_selected = false
-var click_offset = Vector2(0,0)
-var connected_to = null
-
-
-
-func _process(delta: float) -> void:
-	if is_selected:
-		position = lerp(position, get_global_mouse_position() + click_offset, delta*10)
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_just_pressed(\"click\"):# && !GlobalVariables.is_mouse_busy:
-		#GlobalVariables.is_mouse_busy = true
-		is_selected = true
-		click_offset = position - get_global_mouse_position()
-		if connected_to != null:
-			connected_to.occupied = false
-		connected_to = null
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_released(\"click\"):
-		#GlobalVariables.is_mouse_busy = false
-		is_selected = false
-		for area in $Area2D.get_overlapping_areas():
-			var node = area.get_parent()
-			if node.fits_id == fits_id && node.occupied == false:
-				position = node.position
-				connected_to = node
-				node.occupied = true
-"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bpv0y"]
-radius = 499.888
+[sub_resource type="CircleShape2D" id="CircleShape2D_epmph"]
+radius = 507.582
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4xvh8"]
 radius = 314.643
@@ -100,125 +62,124 @@ Button/styles/normal = SubResource("StyleBoxFlat_7kujr")
 Button/styles/pressed = SubResource("StyleBoxFlat_7kujr")
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_4ihcf")
+script = ExtResource("1_1tdm5")
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(0.517184, 0.517184, 0.517184, 1)
 position = Vector2(960.889, 540.5)
 scale = Vector2(0.500463, 0.500463)
-texture = ExtResource("12_rq7vt")
+texture = ExtResource("2_j6wgn")
 
-[node name="Mercury_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Mercury_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(118, 518)
 texture = SubResource("CompressedTexture2D_jjmxk")
 correct_id = 1
 
-[node name="Venus_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Venus_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(278, 513)
 texture = SubResource("CompressedTexture2D_bvdt7")
 correct_id = 2
 
-[node name="Earth_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Earth_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(457, 511)
 texture = SubResource("CompressedTexture2D_j6x6i")
 correct_id = 3
 
-[node name="Mars_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Mars_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(624, 509)
 texture = SubResource("CompressedTexture2D_ix8bq")
 correct_id = 4
 
-[node name="Jupiter_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Jupiter_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(903, 504)
 texture = SubResource("CompressedTexture2D_fqve3")
 correct_id = 5
 
-[node name="Saturn_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Saturn_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(1260, 509)
 texture = SubResource("CompressedTexture2D_3uud4")
 correct_id = 6
 
-[node name="Uranus_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Uranus_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(1549, 523)
 texture = SubResource("CompressedTexture2D_wyej2")
 correct_id = 7
 
-[node name="Neptune_destination" parent="." instance=ExtResource("2_vcynd")]
+[node name="Neptune_destination" parent="." instance=ExtResource("3_ieqid")]
 position = Vector2(1774, 525)
 texture = SubResource("CompressedTexture2D_7ofxx")
 correct_id = 8
 
-[node name="Mercury" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Mercury" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(884, 972)
 scale = Vector2(0.063, 0.063)
-texture = ExtResource("4_7mu4s")
+texture = ExtResource("5_cert6")
 correct_id = 1
 
 [node name="CollisionShape2D" parent="Mercury/Area2D" index="0"]
 shape = SubResource("CircleShape2D_oihjh")
 
-[node name="Venus" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Venus" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(328, 925)
 scale = Vector2(0.13125, 0.13125)
-texture = ExtResource("5_iuhxk")
+texture = ExtResource("6_0uped")
 correct_id = 2
 
 [node name="CollisionShape2D" parent="Venus/Area2D" index="0"]
 shape = SubResource("CircleShape2D_tfni5")
 
-[node name="Earth" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Earth" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(1052, 976)
 scale = Vector2(0.142, 0.142)
-texture = ExtResource("6_tifmc")
+texture = ExtResource("7_jxn4j")
 correct_id = 3
 
 [node name="CollisionShape2D" parent="Earth/Area2D" index="0"]
 shape = SubResource("CircleShape2D_msdoq")
 
-[node name="Mars" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Mars" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(493, 918)
 scale = Vector2(0.0975, 0.0975)
-texture = ExtResource("7_5juk1")
+texture = ExtResource("8_rdmlx")
 correct_id = 4
 
 [node name="CollisionShape2D" parent="Mars/Area2D" index="0"]
 shape = SubResource("CircleShape2D_3dfko")
 
-[node name="Jupiter" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Jupiter" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(1364, 872)
 scale = Vector2(0.32575, 0.32575)
-texture = ExtResource("8_3pcgk")
-script = SubResource("GDScript_fs33p")
+texture = ExtResource("9_i8qwj")
 correct_id = 5
 
 [node name="CollisionShape2D" parent="Jupiter/Area2D" index="0"]
-shape = SubResource("CircleShape2D_bpv0y")
+shape = SubResource("CircleShape2D_epmph")
 
-[node name="Saturn" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Saturn" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(1699, 931)
 rotation = -0.483456
 scale = Vector2(0.410587, 0.410587)
-texture = ExtResource("9_grrph")
+texture = ExtResource("10_s5mug")
 correct_id = 6
 
 [node name="CollisionShape2D" parent="Saturn/Area2D" index="0"]
 shape = SubResource("CircleShape2D_4xvh8")
 
-[node name="Uranus" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Uranus" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(701, 919)
 rotation = 0.436332
 scale = Vector2(0.271387, 0.271387)
-texture = ExtResource("10_t1asw")
+texture = ExtResource("11_jkwae")
 correct_id = 7
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Uranus/Area2D" index="0"]
 shape = SubResource("CircleShape2D_t7060")
-metadata/_edit_lock_ = true
 
-[node name="Neptune" parent="." instance=ExtResource("1_qnb4a")]
+[node name="Neptune" parent="." instance=ExtResource("4_4cwf2")]
 position = Vector2(145, 966)
 scale = Vector2(0.165, 0.165)
-texture = ExtResource("11_k22hu")
+texture = ExtResource("12_7rkg7")
 correct_id = 8
 
 [node name="CollisionShape2D" parent="Neptune/Area2D" index="0"]
@@ -255,6 +216,9 @@ text = "Back to menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
+[editable path="Saturn_destination"]
+[editable path="Uranus_destination"]
+[editable path="Neptune_destination"]
 [editable path="Mercury"]
 [editable path="Venus"]
 [editable path="Earth"]

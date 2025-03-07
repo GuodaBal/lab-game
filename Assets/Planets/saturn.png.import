@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5etfkcccc3ew"
-path="res://.godot/imported/uranus.png-7db1b6ddbb3d830fc3c09228e83992ec.ctex"
+uid="uid://b5x8q1kbxkn1f"
+path="res://.godot/imported/saturn.png-21c59c577759287fc865ee7b50122852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_level/uranus.png"
-dest_files=["res://.godot/imported/uranus.png-7db1b6ddbb3d830fc3c09228e83992ec.ctex"]
+source_file="res://Assets/Planets/saturn.png"
+dest_files=["res://.godot/imported/saturn.png-21c59c577759287fc865ee7b50122852.ctex"]
 
 [params]
 

@@ -30,6 +30,8 @@ func _input(event: InputEvent) -> void:
 		for area in $Area2D.get_overlapping_areas():
 			var node = area.get_parent()
 			if node.fits_id == fits_id && node.occupied == false:
+				print_debug(node)
 				position = node.position
 				connected_to = node
 				node.occupied = true
+				break

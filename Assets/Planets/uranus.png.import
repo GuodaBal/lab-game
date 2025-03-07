@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpnkc0dhcdgba"
-path="res://.godot/imported/mars.png-d1cb1a0201b414aa156be9a3a97491d4.ctex"
+uid="uid://c5etfkcccc3ew"
+path="res://.godot/imported/uranus.png-92109e5dcbd04f5ad1f04f7a459c1d9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_level/mars.png"
-dest_files=["res://.godot/imported/mars.png-d1cb1a0201b414aa156be9a3a97491d4.ctex"]
+source_file="res://Assets/Planets/uranus.png"
+dest_files=["res://.godot/imported/uranus.png-92109e5dcbd04f5ad1f04f7a459c1d9d.ctex"]
 
 [params]
 
