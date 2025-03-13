@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bijaxat2wqwql"]
+[gd_scene load_steps=9 format=3 uid="uid://bijaxat2wqwql"]
 
-[ext_resource type="Texture2D" uid="uid://bw555mo1lej4x" path="res://Assets/UI/Main_menu/visas.png" id="1_7rcth"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_eours"]
 [ext_resource type="Theme" uid="uid://dfh7fbwsij8h2" path="res://Assets/UI/Main_menu/buttons.tres" id="3_b4mw7"]
+[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="4_d04kf"]
+[ext_resource type="Texture2D" uid="uid://i4aoweqljklw" path="res://Assets/UI/Main_menu/menuempty.png" id="5_dhrcb"]
+[ext_resource type="Texture2D" uid="uid://dirg3kjosd14h" path="res://Assets/UI/Main_menu/levelsbutton.png" id="6_lqk4t"]
+[ext_resource type="Texture2D" uid="uid://w7tglr6c4rdh" path="res://Assets/UI/Main_menu/optionsbutton.png" id="7_15lqw"]
+[ext_resource type="Texture2D" uid="uid://l8n8m6ooy417" path="res://Assets/UI/Main_menu/exit.png" id="8_j514d"]
+[ext_resource type="Texture2D" uid="uid://dfmgqvpmkfau3" path="res://Assets/UI/Main_menu/daily.png" id="9_w613r"]
 
 [node name="Main menu" type="Control"]
 layout_mode = 3
@@ -13,12 +18,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eours")
 
-[node name="Visas" type="Sprite2D" parent="."]
-position = Vector2(960.111, 540)
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7rcth")
+texture = ExtResource("4_d04kf")
 
-[node name="Play" type="Button" parent="."]
+[node name="Paper" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dhrcb")
+
+[node name="Levels" type="Sprite2D" parent="."]
+position = Vector2(960, 539)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_lqk4t")
+
+[node name="Options" type="Sprite2D" parent="."]
+position = Vector2(958.778, 540.5)
+scale = Vector2(0.498611, 0.498611)
+texture = ExtResource("7_15lqw")
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(961.556, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_j514d")
+
+[node name="Daily" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+scale = Vector2(0.499537, 0.499537)
+texture = ExtResource("9_w613r")
+
+[node name="DailyButon" type="Button" parent="."]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 464.0
@@ -27,7 +57,7 @@ offset_bottom = 567.0
 rotation = -0.0436332
 theme = ExtResource("3_b4mw7")
 
-[node name="Levels" type="Button" parent="."]
+[node name="Levelsbutton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 605.0
@@ -36,7 +66,7 @@ offset_bottom = 695.0
 rotation = 0.0296706
 theme = ExtResource("3_b4mw7")
 
-[node name="Options" type="Button" parent="."]
+[node name="OptionsButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 750.0
@@ -45,5 +75,15 @@ offset_bottom = 840.0
 rotation = -0.0349066
 theme = ExtResource("3_b4mw7")
 
-[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 867.0
+offset_right = 259.0
+offset_bottom = 957.0
+rotation = 0.0436332
+theme = ExtResource("3_b4mw7")
+
+[connection signal="pressed" from="DailyButon" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

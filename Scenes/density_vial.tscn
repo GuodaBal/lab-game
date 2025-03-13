@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://c71fwrase544y"]
+
+[ext_resource type="Texture2D" uid="uid://em2fb8vt5o6y" path="res://Assets/Densities/megintuvelis.png" id="1_5mdo0"]
+[ext_resource type="Script" path="res://Scripts/density_vial.gd" id="1_6pfo1"]
+[ext_resource type="Texture2D" uid="uid://c4cixx3agfsa1" path="res://Assets/Densities/skystisdugnas.png" id="1_fcdry"]
+[ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="2_flj5l"]
+[ext_resource type="Texture2D" uid="uid://b1c4bup5x6p5m" path="res://Assets/Densities/skystis.png" id="2_i240x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmm5l"]
+shader = ExtResource("2_flj5l")
+shader_parameter/intensity = 0.001
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ybdoy"]
+shader = ExtResource("2_flj5l")
+shader_parameter/intensity = 0.001
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t25gs"]
+radius = 62.0
+height = 562.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jvik"]
+size = Vector2(218, 642)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_6pfo1")
+
+[node name="Liquid1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 383)
+texture = ExtResource("1_fcdry")
+
+[node name="Liquid2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 286)
+texture = ExtResource("2_i240x")
+
+[node name="Liquid3" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_cmm5l")
+position = Vector2(1, 191)
+texture = ExtResource("2_i240x")
+
+[node name="Liquid4" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ybdoy")
+position = Vector2(1, 96)
+texture = ExtResource("2_i240x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5mdo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, -64)
+shape = SubResource("CapsuleShape2D_t25gs")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, -62)
+shape = SubResource("RectangleShape2D_3jvik")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

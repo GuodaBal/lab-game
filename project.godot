@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalVariables="*res://Scripts/global_variables.gd"
+GlobalAudioStreamPlayer="*res://Scripts/audio_stream_player.gd"
+SelectionManager="*res://Scripts/selection_manager.gd"
 
 [display]
 

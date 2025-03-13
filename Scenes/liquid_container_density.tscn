@@ -1,25 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5a8go2b2xi27"]
+[gd_scene load_steps=9 format=3 uid="uid://c5a8go2b2xi27"]
 
 [ext_resource type="Script" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
+[ext_resource type="Script" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
+[ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="2_v2oku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0rv4"]
+size = Vector2(232, 234)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3862q"]
+shader = ExtResource("2_v2oku")
+shader_parameter/intensity = 0.005
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_a1hba"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0pd0y"]
 noise = SubResource("FastNoiseLite_a1hba")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0rv4"]
-size = Vector2(516, 518)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxja"]
+size = Vector2(265, 262)
 
-[node name="Liquid_container_density" type="Sprite2D"]
-texture = SubResource("NoiseTexture2D_0pd0y")
-centered = false
+[node name="StaticBody2D" type="StaticBody2D" groups=["draggable_objects"]]
+input_pickable = true
 script = ExtResource("1_4i7g5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="LiquidArea" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(256, 260)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidArea"]
+position = Vector2(125, 118)
 shape = SubResource("RectangleShape2D_b0rv4")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3862q")
+scale = Vector2(0.5, 0.5)
+texture = SubResource("NoiseTexture2D_0pd0y")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11, 1, 10, 233, 236, 234, 238, 3, 256, 1, 257, 260, -2, 260, -1, 1)
+
+[node name="SpriteArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_in1e6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteArea"]
+position = Vector2(127.5, 130)
+shape = SubResource("RectangleShape2D_3kxja")
+
+[connection signal="body_entered" from="LiquidArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LiquidArea" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="SpriteArea" to="." method="_on_sprite_area_input_event"]

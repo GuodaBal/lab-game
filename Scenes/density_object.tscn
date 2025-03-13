@@ -3,12 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/density_object.gd" id="1_fo4f5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp86l"]
-radius = 34.0
-height = 84.0
+radius = 60.0
+height = 140.0
 
-[node name="Density_object" type="RigidBody2D"]
+[node name="Density_object" type="RigidBody2D" groups=["draggable_objects"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 3
 input_pickable = true
-mass = 0.175
+mass = 0.45
+continuous_cd = 2
 script = ExtResource("1_fo4f5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

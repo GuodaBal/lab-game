@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://bm0gyyknk12jh"]
 
-[ext_resource type="Script" path="res://Scripts/level_completion.gd" id="1_1tdm5"]
+[ext_resource type="Script" path="res://Scripts/planet_level.gd" id="1_1tdm5"]
 [ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_j6wgn"]
 [ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_ieqid"]
 [ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_4cwf2"]
@@ -53,13 +53,13 @@ radius = 316.7
 [sub_resource type="CircleShape2D" id="CircleShape2D_jsm4b"]
 radius = 511.469
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kujr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnb1l"]
 bg_color = Color(0.267308, 0.219672, 0.132755, 1)
 
 [sub_resource type="Theme" id="Theme_eqit3"]
-Button/styles/hover = SubResource("StyleBoxFlat_7kujr")
-Button/styles/normal = SubResource("StyleBoxFlat_7kujr")
-Button/styles/pressed = SubResource("StyleBoxFlat_7kujr")
+Button/styles/hover = SubResource("StyleBoxFlat_xnb1l")
+Button/styles/normal = SubResource("StyleBoxFlat_xnb1l")
+Button/styles/pressed = SubResource("StyleBoxFlat_xnb1l")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1tdm5")
