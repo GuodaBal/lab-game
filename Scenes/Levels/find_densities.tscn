@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbxe3lj5w0arb"]
+[gd_scene load_steps=11 format=3 uid="uid://cbxe3lj5w0arb"]
 
 [ext_resource type="Script" path="res://Scripts/density_level.gd" id="1_ob0e0"]
 [ext_resource type="PackedScene" uid="uid://sj05lhda7c5m" path="res://Scenes/density_object.tscn" id="1_v1oej"]
 [ext_resource type="PackedScene" uid="uid://c5a8go2b2xi27" path="res://Scenes/liquid_container_density.tscn" id="2_v20jo"]
 [ext_resource type="PackedScene" uid="uid://c71fwrase544y" path="res://Scenes/density_vial.tscn" id="3_0vbu8"]
+[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="5_hjnk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu0ly"]
 size = Vector2(1916, 262.5)
@@ -25,33 +26,42 @@ Button/styles/pressed = SubResource("StyleBoxFlat_7kujr")
 [node name="Find_densities" type="Node2D"]
 script = ExtResource("1_ob0e0")
 
+[node name="Fonas" type="Sprite2D" parent="."]
+position = Vector2(961, 1386)
+scale = Vector2(0.530324, 0.530324)
+texture = ExtResource("5_hjnk3")
+
 [node name="Liquid1" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(19, 548)
+position = Vector2(16, 560)
 density = 0.0
+color = "6498ed"
 
 [node name="Liquid2" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(331, 545)
-color = "8a2b16"
+position = Vector2(331, 560)
+density = 2.0
+color = "2d9150"
 
 [node name="Liquid3" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(1356, 545)
-density = 2.0
-color = "168a67"
+position = Vector2(1355, 560)
+density = 3.0
+color = "a1428b"
 
 [node name="Liquid4" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(1638, 548)
-density = 3.0
-color = "bd47e4"
+position = Vector2(1638, 558)
+color = "cbd171"
 
 [node name="Density1" parent="." instance=ExtResource("1_v1oej")]
+modulate = Color(0.698039, 1, 1, 1)
 position = Vector2(1260, 682)
 density = 3.0
 
 [node name="Density2" parent="." instance=ExtResource("1_v1oej")]
+modulate = Color(0.827451, 1, 0.803922, 1)
 position = Vector2(1135, 752)
 density = 2.0
 
 [node name="Density3" parent="." instance=ExtResource("1_v1oej")]
+modulate = Color(1, 0.760784, 1, 1)
 position = Vector2(709, 685)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

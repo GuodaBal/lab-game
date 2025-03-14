@@ -15,9 +15,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			if !liquid.visible:
 				liquid.visible = true
 				liquid.modulate = area.get_parent().color
+				liquid.material.set_shader_parameter("edge_width", 0.004)
 				sequence.append(area.get_parent().density)
 				break
 		if sequence.size() > 1:
+			liquids[sequence.size() - 2].material.set_shader_parameter("edge_width", 0.0)
 			for i in range(1, sequence.size()):
 				if sequence[i] > sequence[i-1]:
 					var color = mix_colors(liquids[i], liquids[i-1])

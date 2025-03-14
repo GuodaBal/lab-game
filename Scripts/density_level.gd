@@ -14,4 +14,4 @@ func level_failed():
 
 
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/find_densities.tscn")
+	get_tree().reload_current_scene()

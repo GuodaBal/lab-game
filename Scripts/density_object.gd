@@ -4,6 +4,7 @@ extends RigidBody2D
 var floating_power
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var collision_shape := $CollisionShape2D as CollisionShape2D
 
 var is_selected = false
 var click_offset = Vector2(0,0)
@@ -12,10 +13,6 @@ var moveVector: Vector2
 
 var water
 var underwater = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 func _physics_process(delta: float) -> void:
 	if is_selected:
@@ -44,8 +41,10 @@ func select():
 	GlobalVariables.is_mouse_busy = true
 	is_selected = true
 	click_offset = position - get_global_mouse_position()
+	collision_shape.disabled = true
 	
 func deselect():
 	GlobalVariables.is_mouse_busy = false
 	is_selected = false
 	apply_impulse(Vector2(0,0))
+	collision_shape.disabled = false

@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var collision_shape := $CollisionPolygon2D as CollisionPolygon2D
 @onready var liquid := $LiquidArea as Area2D
+@onready var liquidSprite := $Liquid as Sprite2D
 
 @export var density = 1.0
 @export var drag = 0.07
@@ -14,7 +15,14 @@ var original_position
 
 func _ready() -> void:
 	original_position = position
-	$Sprite.modulate = color
+	liquidSprite.modulate = color
+	
+	#making liquid shader have different parameters so it's not synced up
+	var rndStart = randf_range(0.0, 5.0)
+	var liquidMaterial = liquidSprite.material.duplicate()  #create copy so each item has unique material
+	liquidSprite.material = liquidMaterial
+	liquidSprite.material.set_shader_parameter("random_start", rndStart)
+	liquidSprite.material.set_shader_parameter("speed", randf_range(0.5, 2.0))
 
 func _process(delta: float) -> void:
 	if is_selected:
@@ -22,7 +30,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print_debug(liquid.monitoring)
 	body.water = self
 
 
@@ -45,10 +52,7 @@ func deselect():
 		liquid.monitoring = true
 
 func empty_container():
-	print_debug("emptied")
-	$Sprite.visible = false
-	
+	liquidSprite.visible = false
 	liquid.set_deferred("monitorable", false)
 	liquid.set_deferred("monitoring", false)
-	print_debug(liquid.monitorable)
 	empty = true
