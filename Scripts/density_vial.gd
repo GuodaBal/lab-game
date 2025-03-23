@@ -25,11 +25,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 					var color = mix_colors(liquids[i], liquids[i-1])
 					liquids[i].modulate = color
 					liquids[i-1].modulate = color
-					await get_tree().create_timer(2.0).timeout
-					get_parent().level_failed()
+					await get_tree().create_timer(1.0).timeout
+					get_parent().level_complete(false)
 					return
 		if sequence.size() == 4:
-			get_parent().level_complete()
+			get_parent().level_complete(true)
 
 func mix_colors(first_liquid, second_liquid):
 	var color1 = first_liquid.modulate as Color

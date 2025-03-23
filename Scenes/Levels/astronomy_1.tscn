@@ -1,0 +1,204 @@
+[gd_scene load_steps=29 format=3 uid="uid://bm0gyyknk12jh"]
+
+[ext_resource type="Script" path="res://Scripts/planet_level.gd" id="1_86vja"]
+[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_ludaq"]
+[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_81tmp"]
+[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_ntdb6"]
+[ext_resource type="Texture2D" uid="uid://1b4hx3vqr23u" path="res://Assets/Planets/mercury.png" id="5_1ie11"]
+[ext_resource type="Texture2D" uid="uid://bhj16fw22qtw6" path="res://Assets/Planets/venus.png" id="6_r1sgf"]
+[ext_resource type="Texture2D" uid="uid://cehkhcjnkt3q6" path="res://Assets/Planets/earth.png" id="7_la6xx"]
+[ext_resource type="Texture2D" uid="uid://cpnkc0dhcdgba" path="res://Assets/Planets/mars.png" id="8_2l7rq"]
+[ext_resource type="Texture2D" uid="uid://ckwf2ks8amcu5" path="res://Assets/Planets/jupiter.png" id="9_brdjf"]
+[ext_resource type="Texture2D" uid="uid://b5x8q1kbxkn1f" path="res://Assets/Planets/saturn.png" id="10_80dgd"]
+[ext_resource type="Texture2D" uid="uid://c5etfkcccc3ew" path="res://Assets/Planets/uranus.png" id="11_jb8eg"]
+[ext_resource type="Texture2D" uid="uid://2c60jvfft2f6" path="res://Assets/Planets/neptune.png" id="12_w1y37"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jjmxk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvdt7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j6x6i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ix8bq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fqve3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3uud4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wyej2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ofxx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oihjh"]
+radius = 508.781
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfni5"]
+radius = 498.184
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msdoq"]
+radius = 503.121
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dfko"]
+radius = 507.316
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epmph"]
+radius = 507.582
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xvh8"]
+radius = 314.643
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t7060"]
+radius = 316.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jsm4b"]
+radius = 511.469
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_86vja")
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.517184, 0.517184, 0.517184, 1)
+position = Vector2(960.889, 540.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("2_ludaq")
+
+[node name="Mercury_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(307, 534)
+texture = SubResource("CompressedTexture2D_jjmxk")
+correct_id = 1
+
+[node name="Venus_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(423, 528)
+texture = SubResource("CompressedTexture2D_bvdt7")
+correct_id = 2
+
+[node name="Earth_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(583, 527)
+texture = SubResource("CompressedTexture2D_j6x6i")
+correct_id = 3
+
+[node name="Mars_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(735, 527)
+texture = SubResource("CompressedTexture2D_ix8bq")
+correct_id = 4
+
+[node name="Jupiter_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(970, 520)
+texture = SubResource("CompressedTexture2D_fqve3")
+correct_id = 5
+
+[node name="Saturn_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(1294, 524)
+texture = SubResource("CompressedTexture2D_3uud4")
+correct_id = 6
+
+[node name="Uranus_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(1568, 532)
+texture = SubResource("CompressedTexture2D_wyej2")
+correct_id = 7
+
+[node name="Neptune_destination" parent="." instance=ExtResource("3_81tmp")]
+position = Vector2(1783, 537)
+texture = SubResource("CompressedTexture2D_7ofxx")
+correct_id = 8
+
+[node name="Mercury" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(821, 1010)
+scale = Vector2(0.0535, 0.0535)
+texture = ExtResource("5_1ie11")
+correct_id = 1
+
+[node name="CollisionShape2D" parent="Mercury/Area2D" index="0"]
+shape = SubResource("CircleShape2D_oihjh")
+
+[node name="Venus" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(219, 997)
+scale = Vector2(0.104625, 0.104625)
+texture = ExtResource("6_r1sgf")
+correct_id = 2
+
+[node name="CollisionShape2D" parent="Venus/Area2D" index="0"]
+shape = SubResource("CircleShape2D_tfni5")
+
+[node name="Earth" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(443, 977)
+scale = Vector2(0.123, 0.123)
+texture = ExtResource("7_la6xx")
+correct_id = 3
+
+[node name="CollisionShape2D" parent="Earth/Area2D" index="0"]
+shape = SubResource("CircleShape2D_msdoq")
+
+[node name="Mars" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(1562.91, 995.094)
+scale = Vector2(0.0941874, 0.0941874)
+texture = ExtResource("8_2l7rq")
+correct_id = 4
+
+[node name="CollisionShape2D" parent="Mars/Area2D" index="0"]
+shape = SubResource("CircleShape2D_3dfko")
+
+[node name="Jupiter" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(1064, 924)
+scale = Vector2(0.282875, 0.282875)
+texture = ExtResource("9_brdjf")
+correct_id = 5
+
+[node name="CollisionShape2D" parent="Jupiter/Area2D" index="0"]
+shape = SubResource("CircleShape2D_epmph")
+
+[node name="Saturn" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(1771, 923)
+rotation = -0.483456
+scale = Vector2(0.354241, 0.354241)
+texture = ExtResource("10_80dgd")
+correct_id = 6
+
+[node name="CollisionShape2D" parent="Saturn/Area2D" index="0"]
+shape = SubResource("CircleShape2D_4xvh8")
+
+[node name="Uranus" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(1355, 970)
+rotation = 0.436332
+scale = Vector2(0.249536, 0.249536)
+texture = ExtResource("11_jb8eg")
+correct_id = 7
+
+[node name="CollisionShape2D" parent="Uranus/Area2D" index="0"]
+shape = SubResource("CircleShape2D_t7060")
+
+[node name="Neptune" parent="." instance=ExtResource("4_ntdb6")]
+position = Vector2(681, 966)
+scale = Vector2(0.1515, 0.1515)
+texture = ExtResource("12_w1y37")
+correct_id = 8
+
+[node name="CollisionShape2D" parent="Neptune/Area2D" index="0"]
+shape = SubResource("CircleShape2D_jsm4b")
+
+[node name="hint" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 1.0
+offset_top = 103.0
+offset_right = 1918.0
+offset_bottom = 235.0
+theme_override_font_sizes/normal_font_size = 93
+bbcode_enabled = true
+text = "[center]Arrange the planets![/center]"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 1, 0.341176, 1)
+position = Vector2(-264, 515)
+texture = ExtResource("5_1ie11")
+
+[editable path="Saturn_destination"]
+[editable path="Uranus_destination"]
+[editable path="Neptune_destination"]
+[editable path="Mercury"]
+[editable path="Venus"]
+[editable path="Earth"]
+[editable path="Mars"]
+[editable path="Jupiter"]
+[editable path="Saturn"]
+[editable path="Uranus"]
+[editable path="Neptune"]

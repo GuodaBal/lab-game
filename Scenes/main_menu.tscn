@@ -85,5 +85,6 @@ rotation = 0.0436332
 theme = ExtResource("3_b4mw7")
 
 [connection signal="pressed" from="DailyButon" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Levelsbutton" to="." method="_on_levelsbutton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://sj05lhda7c5m"]
+[gd_scene load_steps=5 format=3 uid="uid://sj05lhda7c5m"]
 
 [ext_resource type="Script" path="res://Scripts/density_object.gd" id="1_fo4f5"]
 [ext_resource type="Texture2D" uid="uid://iqvme37cnb2y" path="res://Assets/Densities/object.png" id="2_qfqar"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0vq44"]
+friction = 0.42
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp86l"]
-radius = 60.0
-height = 140.0
+radius = 57.0
+height = 136.0
 
 [node name="Density_object" type="RigidBody2D" groups=["draggable_objects"]]
 z_index = 1
@@ -13,6 +16,7 @@ collision_layer = 2
 collision_mask = 3
 input_pickable = true
 mass = 0.45
+physics_material_override = SubResource("PhysicsMaterial_0vq44")
 continuous_cd = 2
 script = ExtResource("1_fo4f5")
 
@@ -21,8 +25,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mp86l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.25, -4.76837e-07)
-scale = Vector2(0.359, 0.478)
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.332, 0.44205)
 texture = ExtResource("2_qfqar")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

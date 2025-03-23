@@ -1,0 +1,241 @@
+[gd_scene load_steps=60 format=3 uid="uid://cvtuj7j6k2mwt"]
+
+[ext_resource type="Texture2D" uid="uid://ced42yy0awf31" path="res://Assets/UI/Levels/levelsbuttons.png" id="1_64ta4"]
+[ext_resource type="Script" path="res://Scripts/level_button.gd" id="2_tbu3r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymsbn"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oyb8"]
+atlas = SubResource("CompressedTexture2D_ymsbn")
+region = Rect2(971, 949, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csgr8"]
+texture = SubResource("AtlasTexture_0oyb8")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tohd1"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la5ru"]
+atlas = SubResource("CompressedTexture2D_tohd1")
+region = Rect2(971, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2282e"]
+texture = SubResource("AtlasTexture_la5ru")
+modulate_color = Color(0.678944, 0.678944, 0.678944, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ejxn"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bso24"]
+atlas = SubResource("CompressedTexture2D_4ejxn")
+region = Rect2(971, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth3k"]
+texture = SubResource("AtlasTexture_bso24")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_elmv7"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwqo8"]
+atlas = SubResource("CompressedTexture2D_elmv7")
+region = Rect2(971, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ernt5"]
+texture = SubResource("AtlasTexture_kwqo8")
+modulate_color = Color(0.404511, 0.404511, 0.404511, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plvd1"]
+atlas = ExtResource("1_64ta4")
+region = Rect2(1395, 951, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xyeku"]
+texture = SubResource("AtlasTexture_plvd1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du4ai"]
+atlas = ExtResource("1_64ta4")
+region = Rect2(1395, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilt4h"]
+texture = SubResource("AtlasTexture_du4ai")
+modulate_color = Color(0.678431, 0.678431, 0.678431, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ojgvj"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h73r"]
+atlas = SubResource("CompressedTexture2D_ojgvj")
+region = Rect2(1395, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ui5y"]
+texture = SubResource("AtlasTexture_6h73r")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1gr4"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8r3o"]
+atlas = SubResource("CompressedTexture2D_l1gr4")
+region = Rect2(1395, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ymvwb"]
+texture = SubResource("AtlasTexture_i8r3o")
+modulate_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho5uj"]
+atlas = ExtResource("1_64ta4")
+region = Rect2(1183, 949, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0hhs"]
+texture = SubResource("AtlasTexture_ho5uj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1gnv"]
+atlas = ExtResource("1_64ta4")
+region = Rect2(1183, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nsff8"]
+texture = SubResource("AtlasTexture_u1gnv")
+modulate_color = Color(0.678431, 0.678431, 0.678431, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cexy4"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfcog"]
+atlas = SubResource("CompressedTexture2D_cexy4")
+region = Rect2(1183, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l078u"]
+texture = SubResource("AtlasTexture_vfcog")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n6eat"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa1et"]
+atlas = SubResource("CompressedTexture2D_n6eat")
+region = Rect2(1183, 732, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aaa0h"]
+texture = SubResource("AtlasTexture_wa1et")
+modulate_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02uwk"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7th4k"]
+atlas = SubResource("CompressedTexture2D_02uwk")
+region = Rect2(1823, 952, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ls0er"]
+texture = SubResource("AtlasTexture_7th4k")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vvkej"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r21l3"]
+atlas = SubResource("CompressedTexture2D_vvkej")
+region = Rect2(1823, 735, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcyhr"]
+texture = SubResource("AtlasTexture_r21l3")
+modulate_color = Color(0.678431, 0.678431, 0.678431, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tjw85"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseok"]
+atlas = SubResource("CompressedTexture2D_tjw85")
+region = Rect2(1823, 735, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_noq4u"]
+texture = SubResource("AtlasTexture_mseok")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tjm7h"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrtgr"]
+atlas = SubResource("CompressedTexture2D_tjm7h")
+region = Rect2(1823, 735, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wbsm"]
+texture = SubResource("AtlasTexture_rrtgr")
+modulate_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vlmit"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrjfr"]
+atlas = SubResource("CompressedTexture2D_vlmit")
+region = Rect2(1608, 951, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqglc"]
+texture = SubResource("AtlasTexture_qrjfr")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ekin6"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfi7k"]
+atlas = SubResource("CompressedTexture2D_ekin6")
+region = Rect2(1608, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0e5qj"]
+texture = SubResource("AtlasTexture_qfi7k")
+modulate_color = Color(0.678431, 0.678431, 0.678431, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ealpe"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk8u1"]
+atlas = SubResource("CompressedTexture2D_ealpe")
+region = Rect2(1608, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywrwr"]
+texture = SubResource("AtlasTexture_hk8u1")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_68fqa"]
+load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xruy"]
+atlas = SubResource("CompressedTexture2D_68fqa")
+region = Rect2(1608, 734, 206, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dp87"]
+texture = SubResource("AtlasTexture_4xruy")
+modulate_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[sub_resource type="Theme" id="Theme_dwyx2"]
+Button/styles/disabled = SubResource("StyleBoxTexture_csgr8")
+Button/styles/hover = SubResource("StyleBoxTexture_2282e")
+Button/styles/normal = SubResource("StyleBoxTexture_gth3k")
+Button/styles/pressed = SubResource("StyleBoxTexture_ernt5")
+GreenLevelButton/base_type = &"Button"
+GreenLevelButton/styles/disabled = SubResource("StyleBoxTexture_xyeku")
+GreenLevelButton/styles/hover = SubResource("StyleBoxTexture_ilt4h")
+GreenLevelButton/styles/normal = SubResource("StyleBoxTexture_0ui5y")
+GreenLevelButton/styles/pressed = SubResource("StyleBoxTexture_ymvwb")
+PurpleLevelButton/base_type = &"Button"
+PurpleLevelButton/styles/disabled = SubResource("StyleBoxTexture_g0hhs")
+PurpleLevelButton/styles/hover = SubResource("StyleBoxTexture_nsff8")
+PurpleLevelButton/styles/normal = SubResource("StyleBoxTexture_l078u")
+PurpleLevelButton/styles/pressed = SubResource("StyleBoxTexture_aaa0h")
+RedLevelButton/base_type = &"Button"
+RedLevelButton/styles/disabled = SubResource("StyleBoxTexture_ls0er")
+RedLevelButton/styles/hover = SubResource("StyleBoxTexture_rcyhr")
+RedLevelButton/styles/normal = SubResource("StyleBoxTexture_noq4u")
+RedLevelButton/styles/pressed = SubResource("StyleBoxTexture_8wbsm")
+YellowLevelButton/base_type = &"Button"
+YellowLevelButton/styles/disabled = SubResource("StyleBoxTexture_oqglc")
+YellowLevelButton/styles/hover = SubResource("StyleBoxTexture_0e5qj")
+YellowLevelButton/styles/normal = SubResource("StyleBoxTexture_ywrwr")
+YellowLevelButton/styles/pressed = SubResource("StyleBoxTexture_4dp87")
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+pivot_offset = Vector2(100, 100)
+focus_mode = 0
+theme = SubResource("Theme_dwyx2")
+script = ExtResource("2_tbu3r")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

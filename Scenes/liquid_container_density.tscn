@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5a8go2b2xi27"]
+[gd_scene load_steps=12 format=3 uid="uid://c5a8go2b2xi27"]
 
 [ext_resource type="Script" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
 [ext_resource type="Script" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
@@ -6,62 +6,81 @@
 [ext_resource type="Texture2D" uid="uid://dcltf0ldecau5" path="res://Assets/Densities/liquid.png" id="3_qtm01"]
 [ext_resource type="Texture2D" uid="uid://b5pa7434wqe81" path="res://Assets/Densities/beaker.png" id="5_yisew"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_trdxc"]
+friction = 0.13
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0rv4"]
-size = Vector2(232, 234)
+size = Vector2(245, 241)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3862q"]
 shader = ExtResource("2_v2oku")
-shader_parameter/water_height = 0.1
+shader_parameter/water_height = 0.335
 shader_parameter/edge_width = 0.01
 shader_parameter/texture_blend = 1.0
 shader_parameter/speed = 1.0
 shader_parameter/wave_scale_horizontal = 1.0
 shader_parameter/wave_scale_vertical = 1.0
 shader_parameter/random_start = 0.0
+shader_parameter/object_rotation = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxja"]
-size = Vector2(265, 262)
+size = Vector2(279.85, 290.35)
 
-[node name="StaticBody2D" type="StaticBody2D" groups=["draggable_objects"]]
-input_pickable = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbk1k"]
+size = Vector2(19, 279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6c7r"]
+custom_solver_bias = 1.0
+size = Vector2(280, 25)
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["draggable_objects"]]
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_trdxc")
+center_of_mass_mode = 1
+angular_damp = 5.611
 script = ExtResource("1_4i7g5")
 
 [node name="LiquidArea" type="Area2D" parent="."]
-visible = false
 z_index = 1
+position = Vector2(-127.85, -193.888)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidArea"]
-position = Vector2(125, 118)
+position = Vector2(131.5, 117.5)
 shape = SubResource("RectangleShape2D_b0rv4")
 
 [node name="Liquid" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3862q")
-scale = Vector2(0.5, 0.5)
+position = Vector2(-127.85, -207.888)
+scale = Vector2(0.5206, 0.5206)
 texture = ExtResource("3_qtm01")
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(11, 1, 10, 233, 236, 234, 238, 3, 256, 1, 257, 260, -2, 260, -1, 1)
-
 [node name="SpriteArea" type="Area2D" parent="."]
-visible = false
+position = Vector2(-123.15, -205.188)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_in1e6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteArea"]
-position = Vector2(127.5, 130)
+position = Vector2(126.225, 135.475)
 shape = SubResource("RectangleShape2D_3kxja")
 
 [node name="Beaker" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(127.5, 122)
-scale = Vector2(0.562, 0.592)
+position = Vector2(1.14999, -74.8882)
+scale = Vector2(0.5966, 0.628447)
 texture = ExtResource("5_yisew")
 
-[connection signal="body_entered" from="LiquidArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="LiquidArea" to="." method="_on_area_2d_body_exited"]
-[connection signal="input_event" from="SpriteArea" to="." method="_on_sprite_area_input_event"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-127.35, -69.3882)
+shape = SubResource("RectangleShape2D_lbk1k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(131.15, -69.8882)
+shape = SubResource("RectangleShape2D_lbk1k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(2.14999, 56.6118)
+shape = SubResource("RectangleShape2D_o6c7r")

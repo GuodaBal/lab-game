@@ -16,9 +16,13 @@ var underwater = false
 
 func _physics_process(delta: float) -> void:
 	if is_selected:
-		PhysicsServer2D.body_set_state(get_rid(),
-		PhysicsServer2D.BODY_STATE_TRANSFORM,
-		Transform2D.IDENTITY.translated(get_global_mouse_position()))
+		var direction = get_global_mouse_position() - position
+		var target_velocity = (direction*10.0).limit_length(1000)
+		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.2))
+		#PhysicsServer2D.body_set_state(get_rid(),
+		#PhysicsServer2D.BODY_STATE_TRANSFORM,
+		#Transform2D.IDENTITY.translated(get_global_mouse_position()))
+		
 	if water != null:
 		set_collision_mask_value(3, true)
 		if position.y < water.position.y:
@@ -38,13 +42,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 
 func select():
+	#print_debug("selecting")
 	GlobalVariables.is_mouse_busy = true
 	is_selected = true
 	click_offset = position - get_global_mouse_position()
-	collision_shape.disabled = true
+	#collision_shape.disabled = true
 	
 func deselect():
 	GlobalVariables.is_mouse_busy = false
 	is_selected = false
 	apply_impulse(Vector2(0,0))
-	collision_shape.disabled = false
+	#collision_shape.disabled = false
