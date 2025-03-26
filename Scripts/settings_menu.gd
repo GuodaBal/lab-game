@@ -38,10 +38,12 @@ func _ready() -> void:
 	#$CanvasLayer/Sound/MiscSlider.value = Settings.misc_volume
 
 func _on_graphics_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	GraphicsMenu.visible = true
 	SoundMenu.visible = false
 
 func _on_sound_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	GraphicsMenu.visible = false
 	SoundMenu.visible = true
 
@@ -51,11 +53,13 @@ func _on_back_pressed() -> void:
 	#save_data["settings"] = Settings.save_data()
 	#save_file.store_string(JSON.stringify(save_data))
 	#if get_parent().get_parent() == null:
+		GlobalAudioStreamPlayer.play_click_sound()
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	#else:
 		#queue_free()
 
 func _on_fullscreen_button_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	if DisplayServer.window_get_mode() == 3:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		Fullscreen.text = "Off"
@@ -74,6 +78,7 @@ func _on_fullscreen_button_pressed() -> void:
 	
 
 func _on_resolution_selector_item_selected(index: int) -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	var resolution = ResolutionSelector.get_item_text(index).split("x")
 	get_window().size = Vector2i(int(resolution[0]),int(resolution[1]))
 	get_window().move_to_center()
@@ -103,6 +108,7 @@ func _on_mute_button_ready() -> void:
 	AudioServer.set_bus_mute(Master_Bus_ID, mute_press)  # pritaikykite būseną garsui
 
 func _on_mute_button_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	var mute_pressed = $CanvasLayer/Sound/MuteButton.button_pressed
 	
 	GlobalAudioStreamPlayer.set_mute_state(mute_pressed)  # išsaugokite naują būseną

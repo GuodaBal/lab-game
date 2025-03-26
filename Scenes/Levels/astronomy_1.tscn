@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bm0gyyknk12jh"]
 
-[ext_resource type="Script" path="res://Scripts/planet_level.gd" id="1_86vja"]
+[ext_resource type="Script" uid="uid://3ewhecppjtgq" path="res://Scripts/planet_level.gd" id="1_86vja"]
 [ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_ludaq"]
 [ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_81tmp"]
 [ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_ntdb6"]

@@ -16,4 +16,5 @@ func _input(event: InputEvent) -> void:
 			
 
 func _on_button_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	return_to_main()

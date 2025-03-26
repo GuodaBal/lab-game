@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://18num3ykat17"]
 
-[ext_resource type="Script" path="res://Scripts/level_failed_overlay.gd" id="1_l3uhk"]
+[ext_resource type="Script" uid="uid://2n64b4ritkmk" path="res://Scripts/level_failed_overlay.gd" id="1_l3uhk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kujr"]
 bg_color = Color(0.267308, 0.219672, 0.132755, 1)

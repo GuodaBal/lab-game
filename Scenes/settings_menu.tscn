@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://biff12c7vb888"]
 
-[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="1_o6nma"]
+[ext_resource type="Script" uid="uid://bo32smmnj0cqr" path="res://Scripts/settings_menu.gd" id="1_o6nma"]
 [ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_02rpt"]
 [ext_resource type="Texture2D" uid="uid://bq5tpjjur4pi7" path="res://Assets/UI/Main_menu/Empty_page.png" id="3_cmy4d"]
 
@@ -78,6 +78,7 @@ alignment = 1
 selected = 0
 item_count = 7
 popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
 popup/item_1/text = "1760x990"
 popup/item_1/id = 1
 popup/item_2/text = "1600x900"

@@ -11,6 +11,10 @@ var saved_music_volume = 10.0
 var saved_SFX_volume = 1.0
 
 var audio_player = null
+var click_player = null
+var level1_player = null
+var level2_player = null
+var place_player = null
 
 func get_MusicID():
 	return Music_Bus_ID
@@ -54,3 +58,38 @@ func play_bg_music():
 		#return
 	#stream = bg_music
 	#play()
+func play_click_sound():
+	if not click_player:  # Sukuriame tik jei dar nėra
+		click_player = AudioStreamPlayer.new()
+		click_player.stream = preload("res://Assets/Audio/click_sound.mp3")
+		click_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		click_player.bus = "SFX"	
+		add_child(click_player)
+	click_player.play()
+	
+func play_level1_sound():
+	if not level1_player:  # Sukuriame tik jei dar nėra
+		level1_player = AudioStreamPlayer.new()
+		level1_player.stream = preload("res://Assets/Audio/level_passed.mp3")
+		level1_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		level1_player.bus = "SFX"	
+		add_child(level1_player)
+	level1_player.play()
+	
+func play_level2_sound():
+	if not level2_player:  # Sukuriame tik jei dar nėra
+		level2_player = AudioStreamPlayer.new()
+		level2_player.stream = preload("res://Assets/Audio/level_failed.mp3")
+		level2_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		level2_player.bus = "SFX"	
+		add_child(level2_player)
+	level2_player.play()
+	
+func play_place_sound():
+	if not place_player:  # Sukuriame tik jei dar nėra
+		place_player = AudioStreamPlayer.new()
+		place_player.stream = preload("res://Assets/Audio/place.mp3")
+		place_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		place_player.bus = "SFX"	
+		add_child(place_player)
+	place_player.play()

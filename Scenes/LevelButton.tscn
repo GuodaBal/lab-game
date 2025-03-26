@@ -1,7 +1,7 @@
 [gd_scene load_steps=60 format=3 uid="uid://cvtuj7j6k2mwt"]
 
 [ext_resource type="Texture2D" uid="uid://ced42yy0awf31" path="res://Assets/UI/Levels/levelsbuttons.png" id="1_64ta4"]
-[ext_resource type="Script" path="res://Scripts/level_button.gd" id="2_tbu3r"]
+[ext_resource type="Script" uid="uid://cjsvwjer1x73f" path="res://Scripts/level_button.gd" id="2_tbu3r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymsbn"]
 load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"

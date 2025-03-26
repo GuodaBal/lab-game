@@ -5,6 +5,7 @@ var entered = false
 var scale_up = Vector2(1.1, 1.1)
 
 func _on_pressed() -> void:
+	GlobalAudioStreamPlayer.play_click_sound()
 	get_tree().change_scene_to_file("res://Scenes/Levels/"+level+".tscn")
 
 func _process(delta: float) -> void:

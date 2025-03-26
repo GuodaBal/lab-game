@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crqgo2j3b1uma"]
 
 [ext_resource type="Texture2D" uid="uid://em2fb8vt5o6y" path="res://Assets/Densities/megintuvelis.png" id="1_xdlej"]
-[ext_resource type="Script" path="res://Scripts/blueprint_open_close.gd" id="2_17vqs"]
+[ext_resource type="Script" uid="uid://coe6hadrqo1x0" path="res://Scripts/blueprint_open_close.gd" id="2_17vqs"]
 [ext_resource type="Texture2D" uid="uid://ced42yy0awf31" path="res://Assets/UI/Levels/levelsbuttons.png" id="3_kaxc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h66wg"]
