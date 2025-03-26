@@ -11,6 +11,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_7kujr")
 Button/styles/pressed = SubResource("StyleBoxFlat_7kujr")
 
 [node name="level_failed_overlay" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

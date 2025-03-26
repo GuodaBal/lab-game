@@ -9,6 +9,7 @@ bg_color = Color(0.505882, 0.380392, 0.188235, 1)
 Button/styles/normal = SubResource("StyleBoxFlat_0vmk7")
 
 [node name="Level_passed" type="Control"]
+top_level = true
 z_index = 3
 layout_mode = 3
 anchors_preset = 15

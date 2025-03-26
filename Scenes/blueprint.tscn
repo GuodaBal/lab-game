@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://crqgo2j3b1uma"]
+
+[ext_resource type="Texture2D" uid="uid://em2fb8vt5o6y" path="res://Assets/Densities/megintuvelis.png" id="1_xdlej"]
+[ext_resource type="Script" path="res://Scripts/blueprint_open_close.gd" id="2_17vqs"]
+[ext_resource type="Texture2D" uid="uid://ced42yy0awf31" path="res://Assets/UI/Levels/levelsbuttons.png" id="3_kaxc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h66wg"]
+size = Vector2(165, 559)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_17vqs")
+
+[node name="Opened" type="Node2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-6, -17)
+
+[node name="ColorRect" type="ColorRect" parent="Opened"]
+z_index = 1
+z_as_relative = false
+offset_top = -4.0
+offset_right = 1930.0
+offset_bottom = 1104.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.447059)
+
+[node name="Sprite2D" type="Sprite2D" parent="Opened"]
+z_index = 1
+position = Vector2(1425, 628)
+texture = ExtResource("3_kaxc4")
+
+[node name="Blueprint" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(116, 564)
+texture = ExtResource("1_xdlej")
+
+[node name="Area2D" type="Area2D" parent="Blueprint"]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blueprint/Area2D"]
+position = Vector2(19.5, -67.5)
+shape = SubResource("RectangleShape2D_h66wg")
+
+[connection signal="input_event" from="Blueprint/Area2D" to="." method="_on_area_2d_input_event"]

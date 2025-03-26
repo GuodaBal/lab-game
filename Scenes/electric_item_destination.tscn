@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnj55vj4xadf6"]
+
+[ext_resource type="Script" path="res://Scripts/electric_item_destination.gd" id="1_2wuq2"]
+[ext_resource type="Script" path="res://Scripts/editable_area.gd" id="2_bnfxd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdek1"]
+width = 50
+height = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1p7u"]
+size = Vector2(54, 60)
+
+[node name="Electric_item_destination" type="Sprite2D"]
+texture = SubResource("NoiseTexture2D_qdek1")
+script = ExtResource("1_2wuq2")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -2
+collision_layer = 2
+script = ExtResource("2_bnfxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_m1p7u")
+metadata/_edit_lock_ = true

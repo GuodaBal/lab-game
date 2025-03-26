@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmhvm74yeu1yk"]
+
+[ext_resource type="PackedScene" uid="uid://crqgo2j3b1uma" path="res://Scenes/blueprint.tscn" id="1_tetpw"]
+[ext_resource type="Script" path="res://Scripts/planet_level.gd" id="1_wrm4d"]
+[ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_uote1"]
+[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="3_olrm7"]
+[ext_resource type="PackedScene" uid="uid://dnj55vj4xadf6" path="res://Scenes/electric_item_destination.tscn" id="4_3qp2l"]
+[ext_resource type="PackedScene" uid="uid://cvy2bdt1fivwq" path="res://Scenes/lamp.tscn" id="6_h1dcj"]
+
+[node name="electronics_1" type="Node2D"]
+script = ExtResource("1_wrm4d")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(960.889, 540.5)
+scale = Vector2(0.499537, 0.499537)
+texture = ExtResource("2_uote1")
+
+[node name="ItemDestinations" type="Node2D" parent="."]
+
+[node name="Electric_item_destination" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(555, 640)
+
+[node name="Electric_item_destination2" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(831, 640)
+has_wire = true
+
+[node name="Electric_item_destination3" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1080, 642)
+has_wire = true
+
+[node name="Electric_item_destination4" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1381, 642)
+has_wire = true
+correct_id = 1
+
+[node name="Electric_item_destination5" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(480, 765)
+
+[node name="Electric_item_destination6" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(816, 765)
+has_wire = true
+correct_id = 1
+
+[node name="Electric_item_destination7" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1096, 767)
+has_wire = true
+
+[node name="Electric_item_destination8" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1456, 767)
+
+[node name="Electric_item_destination9" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(405, 890)
+has_wire = true
+
+[node name="Electric_item_destination10" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(792, 890)
+has_wire = true
+
+[node name="Electric_item_destination11" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1127, 892)
+has_wire = true
+correct_id = 2
+
+[node name="Electric_item_destination12" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1531, 892)
+has_wire = true
+
+[node name="Electric_item_destination13" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(330, 1015)
+has_wire = true
+
+[node name="Electric_item_destination14" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(756, 1015)
+has_wire = true
+
+[node name="Electric_item_destination15" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1155, 1017)
+has_wire = true
+
+[node name="Electric_item_destination16" parent="ItemDestinations" instance=ExtResource("4_3qp2l")]
+position = Vector2(1606, 1017)
+has_wire = true
+correct_id = 3
+
+[node name="Switch" parent="." instance=ExtResource("3_olrm7")]
+modulate = Color(0.450648, 0.450648, 0.450648, 1)
+position = Vector2(127, 937)
+correct_id = 2
+
+[node name="Battery" parent="." instance=ExtResource("3_olrm7")]
+modulate = Color(1, 0.514905, 0.574903, 1)
+position = Vector2(310, 612)
+correct_id = 3
+
+[node name="Blueprint" parent="." instance=ExtResource("1_tetpw")]
+position = Vector2(-1, 4)
+
+[node name="hint" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 1.0
+offset_top = 103.0
+offset_right = 1918.0
+offset_bottom = 235.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 93
+bbcode_enabled = true
+text = "[center]Light the lamps![/center]"
+
+[node name="Lamp" parent="." instance=ExtResource("6_h1dcj")]
+position = Vector2(1736, 700)
+correct_id = 1
+
+[node name="Lamp2" parent="." instance=ExtResource("6_h1dcj")]
+position = Vector2(1808, 884)
+correct_id = 1

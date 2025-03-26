@@ -25,7 +25,9 @@ func select():
 func deselect():
 	GlobalVariables.is_mouse_busy = false
 	is_selected = false
+	print_debug("deselected")
 	for area in $Area2D.get_overlapping_areas():
+		print_debug(area)
 		var node = area.get_parent()
 		if node.fits_id == fits_id && node.occupied == false:
 			connected_to = node

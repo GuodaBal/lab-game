@@ -63,42 +63,42 @@ scale = Vector2(0.500463, 0.500463)
 texture = ExtResource("2_ludaq")
 
 [node name="Mercury_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(307, 534)
+position = Vector2(307, 598)
 texture = SubResource("CompressedTexture2D_jjmxk")
 correct_id = 1
 
 [node name="Venus_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(423, 528)
+position = Vector2(423, 592)
 texture = SubResource("CompressedTexture2D_bvdt7")
 correct_id = 2
 
 [node name="Earth_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(583, 527)
+position = Vector2(583, 591)
 texture = SubResource("CompressedTexture2D_j6x6i")
 correct_id = 3
 
 [node name="Mars_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(735, 527)
+position = Vector2(735, 591)
 texture = SubResource("CompressedTexture2D_ix8bq")
 correct_id = 4
 
 [node name="Jupiter_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(970, 520)
+position = Vector2(970, 584)
 texture = SubResource("CompressedTexture2D_fqve3")
 correct_id = 5
 
 [node name="Saturn_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(1294, 524)
+position = Vector2(1294, 588)
 texture = SubResource("CompressedTexture2D_3uud4")
 correct_id = 6
 
 [node name="Uranus_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(1568, 532)
+position = Vector2(1568, 596)
 texture = SubResource("CompressedTexture2D_wyej2")
 correct_id = 7
 
 [node name="Neptune_destination" parent="." instance=ExtResource("3_81tmp")]
-position = Vector2(1783, 537)
+position = Vector2(1783, 601)
 texture = SubResource("CompressedTexture2D_7ofxx")
 correct_id = 8
 
@@ -188,7 +188,7 @@ text = "[center]Arrange the planets![/center]"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.960784, 1, 0.341176, 1)
-position = Vector2(-264, 515)
+position = Vector2(-264, 576)
 texture = ExtResource("5_1ie11")
 
 [editable path="Saturn_destination"]
