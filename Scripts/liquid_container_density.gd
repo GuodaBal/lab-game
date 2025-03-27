@@ -29,16 +29,14 @@ func _process(delta: float) -> void:
 		var direction = get_global_mouse_position() - position + click_offset
 		var target_velocity = (direction*10.0).limit_length(1000)
 		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.1))
-		#position = get_global_mouse_position() + click_offset
 	if abs(rotation_degrees) > 45 && !empty:
 		#Fail if liquid is spilled
-		
 		empty_container()
 		get_parent().level_complete(false)
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.water = self
+	print_debug(body)
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -48,16 +46,11 @@ func select():
 	GlobalVariables.is_mouse_busy = true
 	is_selected = true
 	click_offset = position - get_global_mouse_position()
-	#collision_shape.disabled = true
-	liquid.monitoring = false
 
 func deselect():
 	GlobalVariables.is_mouse_busy = false
 	is_selected = false
 	position = original_position
-	#collision_shape.disabled = false
-	if !empty:
-		liquid.monitoring = true
 
 func empty_container():
 	liquidSprite.visible = false

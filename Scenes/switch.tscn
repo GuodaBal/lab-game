@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjy3y36bmcohs"]
+
+[ext_resource type="Texture2D" uid="uid://32afp2cbg48n" path="res://Assets/Lighting_lamps/detales.png" id="1_kufgn"]
+[ext_resource type="Script" path="res://Scripts/switch.gd" id="1_mptme"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20j2l"]
+atlas = ExtResource("1_kufgn")
+region = Rect2(1757, 976, 254, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j24ar"]
+atlas = ExtResource("1_kufgn")
+region = Rect2(2080, 973, 254, 167)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74c53"]
+radius = 27.0
+height = 260.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uv457"]
+radius = 88.0
+height = 184.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y18dr"]
+radius = 112.284
+height = 316.559
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["draggable_objects", "switch"]]
+script = ExtResource("1_mptme")
+
+[node name="SpriteOn" type="Sprite2D" parent="."]
+position = Vector2(-2.1219, -59.2935)
+scale = Vector2(0.739198, 0.739198)
+texture = SubResource("AtlasTexture_20j2l")
+
+[node name="SpriteOff" type="Sprite2D" parent="."]
+position = Vector2(-1.1219, -58.2935)
+scale = Vector2(0.739, 0.739)
+texture = SubResource("AtlasTexture_j24ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.8611, -18.6376)
+rotation = 1.5708
+scale = Vector2(0.739198, 0.739198)
+shape = SubResource("CapsuleShape2D_74c53")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2.1219, -67.4247)
+scale = Vector2(0.739198, 0.739198)
+shape = SubResource("CapsuleShape2D_uv457")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2.1219, -59.2935)
+scale = Vector2(0.739198, 0.739198)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y18dr")

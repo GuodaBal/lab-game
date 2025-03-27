@@ -10,4 +10,9 @@ func _ready() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
-		opened_blueprint.visible = !opened_blueprint.visible
+		opened_blueprint.visible = true
+
+
+func _on_opened_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("click"):
+		opened_blueprint.visible = false

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c48hsvo00f11j"]
+
+[ext_resource type="Texture2D" uid="uid://32afp2cbg48n" path="res://Assets/Lighting_lamps/detales.png" id="1_8fpxw"]
+[ext_resource type="Script" path="res://Scripts/battery.gd" id="2_bkdpc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tnmk"]
+atlas = ExtResource("1_8fpxw")
+region = Rect2(2398, 1030, 254, 111)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glvbn"]
+radius = 61.0
+height = 264.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbvaq"]
+radius = 49.0
+height = 190.0
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["battery", "draggable_objects"]]
+script = ExtResource("2_bkdpc")
+
+[node name="battery" type="Sprite2D" parent="."]
+position = Vector2(-0.772522, -33.125)
+scale = Vector2(0.592342, 0.592342)
+texture = SubResource("AtlasTexture_1tnmk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.772522, -33.125)
+rotation = 1.5708
+scale = Vector2(0.592342, 0.592342)
+shape = SubResource("CapsuleShape2D_glvbn")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.772522, -33.125)
+scale = Vector2(0.592342, 0.592342)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+scale = Vector2(1.68821, 1.68821)
+shape = SubResource("CapsuleShape2D_cbvaq")

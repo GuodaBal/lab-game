@@ -87,19 +87,17 @@ func _on_resolution_selector_item_selected(index: int) -> void:
 
 func _on_music_slider_value_changed(value: float) -> void:
 	GlobalAudioStreamPlayer.set_music_volume(linear_to_db(value))
-	AudioServer.set_bus_volume_db(Music_Bus_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(Music_Bus_ID, value < .05)
 	#Settings.music_volume = value
 
 func _on_misc_slider_value_changed(value: float) -> void:
 	GlobalAudioStreamPlayer.set_SFX_volume(linear_to_db(value))
-	AudioServer.set_bus_volume_db(SFX_Bus_ID, linear_to_db(value))
+	#AudioServer.set_bus_volume_db(SFX_Bus_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_Bus_ID, value < .05)
 	#Settings.misc_volume = value
 
 func _on_music_slider_ready() -> void:
 	$CanvasLayer/Sound/MusicSlider.value = db_to_linear( GlobalAudioStreamPlayer.get_music_volume())
-
 func _on_misc_slider_ready() -> void:
 	$CanvasLayer/Sound/MiscSlider.value = db_to_linear( GlobalAudioStreamPlayer.get_SFX_volume())
 

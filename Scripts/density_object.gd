@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			if density > water.density:
 				floating_power = 1.0
 			else:
-				floating_power = 2.0
+				floating_power = 1.7
 			apply_central_force(Vector2(0, water.position.y-position.y*floating_power))
 		
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -42,14 +42,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 
 func select():
-	#print_debug("selecting")
 	GlobalVariables.is_mouse_busy = true
 	is_selected = true
 	click_offset = position - get_global_mouse_position()
-	#collision_shape.disabled = true
 	
 func deselect():
 	GlobalVariables.is_mouse_busy = false
 	is_selected = false
 	apply_impulse(Vector2(0,0))
-	#collision_shape.disabled = false

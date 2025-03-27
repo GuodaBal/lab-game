@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://sj05lhda7c5m"]
 
-[ext_resource type="Script" uid="uid://cjtq81fii7gef" path="res://Scripts/density_object.gd" id="1_fo4f5"]
+[ext_resource type="Script" path="res://Scripts/density_object.gd" id="1_fo4f5"]
 [ext_resource type="Texture2D" uid="uid://iqvme37cnb2y" path="res://Assets/Densities/object.png" id="2_qfqar"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0vq44"]

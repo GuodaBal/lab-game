@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://clmm0q1apsqjh"]
 
 [ext_resource type="AudioStream" uid="uid://cxq37upgt152b" path="res://Assets/zaidimo_backtrackas_fixed.mp3" id="1_mecwo"]
-[ext_resource type="Script" uid="uid://bwktvfpxqfn3v" path="res://Scripts/audio_stream_player.gd" id="2_7yjtc"]
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="2_7yjtc"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_mecwo")

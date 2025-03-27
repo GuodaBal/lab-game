@@ -1,16 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5a8go2b2xi27"]
+[gd_scene load_steps=14 format=3 uid="uid://c5a8go2b2xi27"]
 
 [ext_resource type="Script" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
 [ext_resource type="Script" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
 [ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="2_v2oku"]
 [ext_resource type="Texture2D" uid="uid://dcltf0ldecau5" path="res://Assets/Densities/liquid.png" id="3_qtm01"]
 [ext_resource type="Texture2D" uid="uid://b5pa7434wqe81" path="res://Assets/Densities/beaker.png" id="5_yisew"]
+[ext_resource type="Texture2D" uid="uid://b0nnkvbjkj8pd" path="res://Assets/Densities/stiklineisore.png" id="6_w5qkh"]
+[ext_resource type="Texture2D" uid="uid://et6ws6h465be" path="res://Assets/Densities/stiklinegalas.png" id="7_avnw4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_trdxc"]
 friction = 0.13
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0rv4"]
-size = Vector2(245, 241)
+size = Vector2(245, 259.888)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxja"]
+size = Vector2(279.85, 290.35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbk1k"]
+size = Vector2(19, 308.668)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6c7r"]
+custom_solver_bias = 1.0
+size = Vector2(280, 8.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3862q"]
 shader = ExtResource("2_v2oku")
@@ -23,16 +35,6 @@ shader_parameter/wave_scale_vertical = 1.0
 shader_parameter/random_start = 0.0
 shader_parameter/object_rotation = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxja"]
-size = Vector2(279.85, 290.35)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbk1k"]
-size = Vector2(19, 279)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6c7r"]
-custom_solver_bias = 1.0
-size = Vector2(280, 25)
-
 [node name="RigidBody2D" type="RigidBody2D" groups=["draggable_objects"]]
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_trdxc")
@@ -42,23 +44,16 @@ script = ExtResource("1_4i7g5")
 
 [node name="LiquidArea" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(-127.85, -193.888)
+position = Vector2(-127.85, -68.888)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidArea"]
-position = Vector2(131.5, 117.5)
+position = Vector2(131.5, 126.944)
 shape = SubResource("RectangleShape2D_b0rv4")
 
-[node name="Liquid" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_3862q")
-position = Vector2(-127.85, -207.888)
-scale = Vector2(0.5206, 0.5206)
-texture = ExtResource("3_qtm01")
-centered = false
-
 [node name="SpriteArea" type="Area2D" parent="."]
-position = Vector2(-123.15, -205.188)
+position = Vector2(-123.15, -80.188)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_in1e6")
@@ -68,19 +63,41 @@ position = Vector2(126.225, 135.475)
 shape = SubResource("RectangleShape2D_3kxja")
 
 [node name="Beaker" type="Sprite2D" parent="."]
+visible = false
 z_index = 2
-position = Vector2(1.14999, -74.8882)
+position = Vector2(1.14999, 50.1118)
 scale = Vector2(0.5966, 0.628447)
 texture = ExtResource("5_yisew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-127.35, -69.3882)
+position = Vector2(-127.35, 45.5559)
 shape = SubResource("RectangleShape2D_lbk1k")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(131.15, -69.8882)
+position = Vector2(131.15, 50.3339)
 shape = SubResource("RectangleShape2D_lbk1k")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(2.14999, 56.6118)
+position = Vector2(3, 196.75)
 shape = SubResource("RectangleShape2D_o6c7r")
+
+[node name="Beaker_back" type="Sprite2D" parent="."]
+position = Vector2(-13.5, 62.75)
+scale = Vector2(0.933, 0.762)
+texture = ExtResource("7_avnw4")
+
+[node name="Liquid" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3862q")
+position = Vector2(-152.85, -106.888)
+scale = Vector2(0.5206, 0.5206)
+texture = ExtResource("3_qtm01")
+centered = false
+
+[node name="Beaker_front" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-12.5, 61.75)
+scale = Vector2(0.9335, 0.7615)
+texture = ExtResource("6_w5qkh")
+
+[connection signal="body_entered" from="LiquidArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LiquidArea" to="." method="_on_area_2d_body_exited"]
