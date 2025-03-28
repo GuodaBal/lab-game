@@ -15,7 +15,7 @@ size = Vector2(163, 160)
 [node name="RigidBody2D" type="RigidBody2D" groups=["draggable_objects", "item"]]
 physics_material_override = SubResource("PhysicsMaterial_m3v6b")
 gravity_scale = 0.0
-linear_damp = 1.209
+linear_damp = 0.604
 angular_damp = 7.257
 script = ExtResource("2_sv5pm")
 

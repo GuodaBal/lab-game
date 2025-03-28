@@ -58,18 +58,13 @@ func _on_back_pressed() -> void:
 	#else:
 		#queue_free()
 
-func _on_fullscreen_button_pressed() -> void:
+func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	GlobalAudioStreamPlayer.play_click_sound()
-	if DisplayServer.window_get_mode() == 3:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		Fullscreen.text = "Off"
-		#Settings.fullscreen = false
-	else:
+	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		Fullscreen.text = "On"
 		await get_tree().create_timer(0.1).timeout
-		
-		#Settings.fullscreen = true
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	var index = ResolutionSelector.get_selected_id()
 	var resolution = ResolutionSelector.get_item_text(index).split("x")
 	get_window().size = Vector2i(int(resolution[0]),int(resolution[1]))

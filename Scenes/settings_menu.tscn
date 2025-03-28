@@ -1,11 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://biff12c7vb888"]
+[gd_scene load_steps=14 format=3 uid="uid://biff12c7vb888"]
 
 [ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="1_o6nma"]
-[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_02rpt"]
-[ext_resource type="Texture2D" uid="uid://bq5tpjjur4pi7" path="res://Assets/UI/Main_menu/Empty_page.png" id="3_cmy4d"]
+[ext_resource type="Texture2D" uid="uid://bxmxol6jthxqx" path="res://Assets/UI/Settings/fonassettings.png" id="2_g46h0"]
+[ext_resource type="Texture2D" uid="uid://cf2wu1jh4ient" path="res://Assets/UI/Settings/settings.png" id="3_2my76"]
+[ext_resource type="Theme" uid="uid://dfh7fbwsij8h2" path="res://Assets/UI/Main_menu/buttons.tres" id="4_3gcqj"]
+[ext_resource type="Theme" uid="uid://kguic8axou2c" path="res://Assets/UI/Main_menu/settings_buttons.tres" id="5_yydgy"]
 
-[sub_resource type="Theme" id="Theme_8yoo2"]
-CheckButton/constants/icon_max_width = 500
+[sub_resource type="AtlasTexture" id="AtlasTexture_ninnb"]
+atlas = ExtResource("3_2my76")
+region = Rect2(114, 344, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r258l"]
+atlas = ExtResource("3_2my76")
+region = Rect2(115, 554, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc8o3"]
+atlas = ExtResource("3_2my76")
+region = Rect2(115, 763, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt1lv"]
+atlas = ExtResource("3_2my76")
+region = Rect2(116, 976, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjn17"]
+atlas = ExtResource("3_2my76")
+region = Rect2(115, 1190, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v61k3"]
+atlas = ExtResource("3_2my76")
+region = Rect2(116, 1408, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lvf0"]
+atlas = ExtResource("3_2my76")
+region = Rect2(117, 1618, 687, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8v7j"]
+atlas = ExtResource("3_2my76")
+region = Rect2(353, 209, 152, 98)
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -21,58 +52,64 @@ grow_vertical = 2
 script = ExtResource("1_o6nma")
 
 [node name="Fonas" type="Sprite2D" parent="."]
-position = Vector2(0.888977, -1.49994)
-scale = Vector2(0.501389, 0.501389)
-texture = ExtResource("2_02rpt")
-
-[node name="EmptyPage" type="Sprite2D" parent="."]
-position = Vector2(-1.66669, -0.25)
-scale = Vector2(0.49838, 0.49838)
-texture = ExtResource("3_cmy4d")
+position = Vector2(143.611, -1.49994)
+scale = Vector2(0.575723, 0.501389)
+texture = ExtResource("2_g46h0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="GraphicsSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(265, 401)
+scale = Vector2(0.581044, 0.581044)
+texture = SubResource("AtlasTexture_ninnb")
+
+[node name="SoundSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(220, 569)
+scale = Vector2(0.581731, 0.581731)
+texture = SubResource("AtlasTexture_r258l")
+
 [node name="GraphicsSelect" type="Button" parent="CanvasLayer"]
-offset_left = 19.0
-offset_top = 379.0
-offset_right = 413.0
-offset_bottom = 456.0
-theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
+offset_left = 67.173
+offset_top = 348.5
+offset_right = 463.173
+offset_bottom = 451.5
+theme = ExtResource("4_3gcqj")
 theme_override_font_sizes/font_size = 50
 toggle_mode = true
 button_pressed = true
-text = " Graphics"
 alignment = 0
 
 [node name="SoundSelect" type="Button" parent="CanvasLayer"]
 offset_left = 22.0
-offset_top = 543.0
-offset_right = 325.0
-offset_bottom = 620.0
+offset_top = 518.0
+offset_right = 418.0
+offset_bottom = 621.0
+theme = ExtResource("4_3gcqj")
 theme_override_font_sizes/font_size = 50
 toggle_mode = true
-text = " Sound"
 alignment = 0
 
 [node name="Graphics" type="GridContainer" parent="CanvasLayer"]
-visible = false
-offset_left = 740.0
-offset_top = 369.0
-offset_right = 1840.0
-offset_bottom = 833.0
+offset_left = 678.0
+offset_top = 367.0
+offset_right = 1778.0
+offset_bottom = 831.0
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 100
 columns = 2
 
-[node name="ResolutionLabel" type="Label" parent="CanvasLayer/Graphics"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Graphics"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Resolution"
+texture = SubResource("AtlasTexture_bc8o3")
+expand_mode = 5
+stretch_mode = 4
 
 [node name="ResolutionSelector" type="OptionButton" parent="CanvasLayer/Graphics"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+theme = ExtResource("5_yydgy")
 theme_override_font_sizes/font_size = 40
 alignment = 1
 selected = 0
@@ -91,72 +128,85 @@ popup/item_5/id = 4
 popup/item_6/text = "1280x720"
 popup/item_6/id = 5
 
-[node name="FullscreenLabel" type="Label" parent="CanvasLayer/Graphics"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Graphics"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Fullscreen"
+texture = SubResource("AtlasTexture_nt1lv")
+expand_mode = 5
+stretch_mode = 4
 
-[node name="FullscreenButton" type="Button" parent="CanvasLayer/Graphics"]
+[node name="FullscreenButton" type="CheckButton" parent="CanvasLayer/Graphics"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "on"
+size_flags_horizontal = 0
+theme = ExtResource("5_yydgy")
+vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Sound" type="GridContainer" parent="CanvasLayer"]
-offset_left = 740.0
-offset_top = 369.0
-offset_right = 1840.0
-offset_bottom = 833.0
+visible = false
+offset_left = 678.0
+offset_top = 368.0
+offset_right = 1778.0
+offset_bottom = 883.0
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 100
 columns = 2
 
-[node name="MusicLabel" type="Label" parent="CanvasLayer/Sound"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Sound"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Music"
+texture = SubResource("AtlasTexture_bjn17")
+expand_mode = 5
+stretch_mode = 4
 
 [node name="MusicSlider" type="HSlider" parent="CanvasLayer/Sound"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("5_yydgy")
 max_value = 5.0
 step = 0.05
 value = 1.0
 
-[node name="MiscLabel" type="Label" parent="CanvasLayer/Sound"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Sound"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Miscellaneous"
+texture = SubResource("AtlasTexture_v61k3")
+expand_mode = 5
+stretch_mode = 4
 
 [node name="MiscSlider" type="HSlider" parent="CanvasLayer/Sound"]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("5_yydgy")
 max_value = 1.0
 step = 0.05
 value = 0.5
 
-[node name="MuteLabel" type="Label" parent="CanvasLayer/Sound"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Sound"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Mute"
+texture = SubResource("AtlasTexture_7lvf0")
+expand_mode = 5
+stretch_mode = 4
 
 [node name="MuteButton" type="CheckButton" parent="CanvasLayer/Sound"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = SubResource("Theme_8yoo2")
+theme = ExtResource("5_yydgy")
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Back" type="Button" parent="CanvasLayer"]
-offset_right = 416.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 50
-text = "Back"
+[node name="BackButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 203.0
+offset_bottom = 122.0
+texture_normal = SubResource("AtlasTexture_o8v7j")
 
 [connection signal="pressed" from="CanvasLayer/GraphicsSelect" to="." method="_on_graphics_pressed"]
 [connection signal="pressed" from="CanvasLayer/SoundSelect" to="." method="_on_sound_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Graphics/ResolutionSelector" to="." method="_on_resolution_selector_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Graphics/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="ready" from="CanvasLayer/Graphics/FullscreenButton" to="." method="_on_mute_button_ready"]
+[connection signal="toggled" from="CanvasLayer/Graphics/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="ready" from="CanvasLayer/Sound/MusicSlider" to="." method="_on_music_slider_ready"]
 [connection signal="value_changed" from="CanvasLayer/Sound/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="visibility_changed" from="CanvasLayer/Sound/MusicSlider" to="." method="_on_music_slider_visibility_changed"]
@@ -165,4 +215,4 @@ text = "Back"
 [connection signal="pressed" from="CanvasLayer/Sound/MuteButton" to="." method="_on_mute_button_pressed"]
 [connection signal="ready" from="CanvasLayer/Sound/MuteButton" to="." method="_on_mute_button_ready"]
 [connection signal="toggled" from="CanvasLayer/Sound/MuteButton" to="." method="_on_mute_button_toggled"]
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_pressed"]

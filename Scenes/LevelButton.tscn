@@ -1,7 +1,7 @@
 [gd_scene load_steps=60 format=3 uid="uid://cvtuj7j6k2mwt"]
 
 [ext_resource type="Texture2D" uid="uid://ced42yy0awf31" path="res://Assets/UI/Levels/levelsbuttons.png" id="1_64ta4"]
-[ext_resource type="Script" uid="uid://cjsvwjer1x73f" path="res://Scripts/level_button.gd" id="2_tbu3r"]
+[ext_resource type="Script" path="res://Scripts/level_button.gd" id="2_tbu3r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymsbn"]
 load_path = "res://.godot/imported/levelsbuttons.png-fdc3243fec1f7519b3879b224018c3d8.ctex"
@@ -229,9 +229,20 @@ YellowLevelButton/styles/pressed = SubResource("StyleBoxTexture_4dp87")
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(200, 200)
-offset_right = 200.0
-offset_bottom = 200.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.805, 0.805)
 pivot_offset = Vector2(100, 100)
+size_flags_horizontal = 4
 focus_mode = 0
 theme = SubResource("Theme_dwyx2")
 script = ExtResource("2_tbu3r")

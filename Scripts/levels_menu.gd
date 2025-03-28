@@ -3,7 +3,7 @@ extends Control
 @export var rows = 0
 @export var star_count_needed = []
 
-@onready var container := $GridContainer as GridContainer
+@onready var container := $HBoxContainer/GridContainer2 as GridContainer
 @onready var button = preload("res://Scenes/LevelButton.tscn");
 
 
