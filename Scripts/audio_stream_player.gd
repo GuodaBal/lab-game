@@ -20,6 +20,7 @@ var splash_player = null
 var switch_player = null
 var glasshit_player = null
 var pour_player = null
+var hover_player = null
 
 func get_MusicID():
 	return Music_Bus_ID
@@ -154,3 +155,12 @@ func play_pour_sound():
 		pour_player.volume_db = saved_SFX_volume
 		add_child(pour_player)
 	pour_player.play()
+func play_hover_sound():
+	if not hover_player:  # Sukuriame tik jei dar nėra
+		hover_player = AudioStreamPlayer.new()
+		hover_player.stream = preload("res://Assets/Audio/hover.mp3") 
+		hover_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		hover_player.bus = "SFX"
+		hover_player.volume_db = saved_SFX_volume
+		add_child(hover_player)
+	hover_player.play()

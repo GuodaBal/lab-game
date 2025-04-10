@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 		scale = lerp(scale, Vector2(1.0, 1.0), delta*5)
 
 func _on_mouse_entered() -> void:
+	GlobalAudioStreamPlayer.play_hover_sound()
 	entered = true
 
 func _on_mouse_exited() -> void:

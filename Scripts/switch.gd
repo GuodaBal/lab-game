@@ -3,7 +3,6 @@ extends "physics_item.gd"
 @onready var sprite_on := $SpriteOn
 @onready var sprite_off := $SpriteOff
 var closed = false
-
 func _ready() -> void:
 	sprite_off.visible = true
 	sprite_on.visible = false
