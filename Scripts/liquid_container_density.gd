@@ -15,6 +15,8 @@ var original_position
 func _ready() -> void:
 	original_position = position
 	liquidSprite.modulate = color
+	contact_monitor = true
+	max_contacts_reported = 1  # Max simultaneous contacts you want to track
 	
 	#making liquid shader have different parameters so it's not synced up
 	var rndStart = randf_range(0.0, 5.0)
@@ -36,6 +38,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.water = self
+	GlobalAudioStreamPlayer.play_splash_sound()
 	print_debug(body)
 
 
@@ -56,4 +59,28 @@ func empty_container():
 	liquidSprite.visible = false
 	liquid.set_deferred("monitorable", false)
 	liquid.set_deferred("monitoring", false)
+	GlobalAudioStreamPlayer.play_pour_sound()
 	empty = true
+
+var has_collided := false
+var last_sound_time := 0.0
+
+var current_colliders := []
+const SOUND_COOLDOWN := 0.7  # seconds
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	var now = Time.get_ticks_msec() / 1000.0
+	var new_colliders := []
+
+	for i in range(state.get_contact_count()):
+		var collider = state.get_contact_collider_object(i)
+
+		if collider:
+			# Only play sound if it's a new contact AND cooldown has passed
+			if collider not in current_colliders and now - last_sound_time >= SOUND_COOLDOWN:
+				GlobalAudioStreamPlayer.play_glasshit_sound()
+				last_sound_time = now
+
+			new_colliders.append(collider)
+
+	current_colliders = new_colliders

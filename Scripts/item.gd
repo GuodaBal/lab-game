@@ -9,10 +9,10 @@ var connected_to = null
 
 func _process(delta: float) -> void:
 	if is_selected:
-		GlobalAudioStreamPlayer.play_place_sound()
 		position = lerp(position, get_global_mouse_position() + click_offset, delta*10)
 	if connected_to:
 		position = lerp(position, connected_to.position, delta*10)
+		GlobalAudioStreamPlayer.play_place_sound()
 
 
 func select():

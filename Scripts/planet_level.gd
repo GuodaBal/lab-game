@@ -7,6 +7,7 @@ func _input(event: InputEvent) -> void:
 		await get_tree().physics_frame
 		for node in get_children():
 			if node.is_in_group("item"):
+				GlobalAudioStreamPlayer.play_place_sound()
 				if !node.connected_to || node.connected_to.correct_id != node.correct_id:
 					level_complete = false
 					break

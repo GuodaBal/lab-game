@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://c5a8go2b2xi27"]
 
-[ext_resource type="Script" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
-[ext_resource type="Script" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
-[ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="2_v2oku"]
+[ext_resource type="Script" uid="uid://pg2c51rr0j11" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
+[ext_resource type="Script" uid="uid://d4cjgnj7etmhe" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
+[ext_resource type="Shader" uid="uid://bebbnpac2jfrx" path="res://Assets/Shaders/water.gdshader" id="2_v2oku"]
 [ext_resource type="Texture2D" uid="uid://dcltf0ldecau5" path="res://Assets/Densities/liquid.png" id="3_qtm01"]
 [ext_resource type="Texture2D" uid="uid://b5pa7434wqe81" path="res://Assets/Densities/beaker.png" id="5_yisew"]
 [ext_resource type="Texture2D" uid="uid://b0nnkvbjkj8pd" path="res://Assets/Densities/stiklineisore.png" id="6_w5qkh"]

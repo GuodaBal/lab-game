@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvy2bdt1fivwq"]
 
 [ext_resource type="Texture2D" uid="uid://32afp2cbg48n" path="res://Assets/Lighting_lamps/detales.png" id="1_31gra"]
-[ext_resource type="Script" path="res://Scripts/lamp.gd" id="2_dcrgk"]
+[ext_resource type="Script" uid="uid://rt72dp22b677" path="res://Scripts/lamp.gd" id="2_dcrgk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppwia"]
 radius = 57.1275

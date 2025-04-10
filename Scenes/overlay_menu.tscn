@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hcshq6ex0ptu"]
 
-[ext_resource type="Script" path="res://Scripts/overlay_menu.gd" id="1_3anos"]
+[ext_resource type="Script" uid="uid://cfj2rcsa13hgv" path="res://Scripts/overlay_menu.gd" id="1_3anos"]
 
 [node name="Overlay_menu" type="Control"]
 process_mode = 3

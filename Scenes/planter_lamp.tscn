@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqercqsuf35vq" path="res://Assets/Biologijos level/lempa_off.png" id="1_ubfqx"]
 [ext_resource type="Texture2D" uid="uid://b7mfs4sx1au0x" path="res://Assets/Biologijos level/lempa_on.png" id="2_3yb2k"]
-[ext_resource type="Script" path="res://Scripts/planter_lamp.gd" id="3_8sey8"]
+[ext_resource type="Script" uid="uid://6tvbac8dcqir" path="res://Scripts/planter_lamp.gd" id="3_8sey8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_laiu1"]
 animations = [{

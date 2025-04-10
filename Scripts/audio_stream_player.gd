@@ -15,6 +15,11 @@ var click_player = null
 var level1_player = null
 var level2_player = null
 var place_player = null
+var paper_player = null
+var splash_player = null
+var switch_player = null
+var glasshit_player = null
+var pour_player = null
 
 func get_MusicID():
 	return Music_Bus_ID
@@ -102,3 +107,50 @@ func play_place_sound():
 		place_player.volume_db = saved_SFX_volume
 		add_child(place_player)
 	place_player.play()
+	
+func play_paper_sound():
+	if not paper_player:  # Sukuriame tik jei dar nėra
+		paper_player = AudioStreamPlayer.new()
+		paper_player.stream = preload("res://Assets/Audio/paper.mp3") 
+		paper_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		paper_player.bus = "SFX"
+		paper_player.volume_db = saved_SFX_volume
+		add_child(paper_player)
+	paper_player.play()
+func play_switch_sound():
+	if not switch_player:  # Sukuriame tik jei dar nėra
+		switch_player = AudioStreamPlayer.new()
+		switch_player.stream = preload("res://Assets/Audio/switch.mp3") 
+		switch_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		switch_player.bus = "SFX"
+		switch_player.volume_db = saved_SFX_volume
+		add_child(switch_player)
+	switch_player.play()
+	
+func play_splash_sound():
+	if not splash_player:  # Sukuriame tik jei dar nėra
+		splash_player = AudioStreamPlayer.new()
+		splash_player.stream = preload("res://Assets/Audio/splash.mp3") 
+		splash_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		splash_player.bus = "SFX"
+		splash_player.volume_db = saved_SFX_volume
+		add_child(splash_player)
+	splash_player.play()
+func play_glasshit_sound():
+	if not glasshit_player:  # Sukuriame tik jei dar nėra
+		glasshit_player = AudioStreamPlayer.new()
+		glasshit_player.stream = preload("res://Assets/Audio/glasshit.mp3") 
+		glasshit_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		glasshit_player.bus = "SFX"
+		glasshit_player.volume_db = saved_SFX_volume
+		add_child(glasshit_player)
+	glasshit_player.play()
+func play_pour_sound():
+	if not pour_player:  # Sukuriame tik jei dar nėra
+		pour_player = AudioStreamPlayer.new()
+		pour_player.stream = preload("res://Assets/Audio/pour.mp3") 
+		pour_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Nustatome, kad procesas vyktų visada	
+		pour_player.bus = "SFX"
+		pour_player.volume_db = saved_SFX_volume
+		add_child(pour_player)
+	pour_player.play()

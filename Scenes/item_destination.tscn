@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckhcpwibm21bb"]
 
-[ext_resource type="Script" path="res://Scripts/item_destination.gd" id="1_7a3tt"]
-[ext_resource type="Script" path="res://Scripts/editable_area.gd" id="1_xjxnw"]
+[ext_resource type="Script" uid="uid://dics3vp8ivyg" path="res://Scripts/item_destination.gd" id="1_7a3tt"]
+[ext_resource type="Script" uid="uid://bln7tkt6b62kx" path="res://Scripts/editable_area.gd" id="1_xjxnw"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1uq45"]
 width = 50

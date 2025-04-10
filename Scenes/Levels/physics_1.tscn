@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cbxe3lj5w0arb"]
 
-[ext_resource type="Script" path="res://Scripts/density_level.gd" id="1_ob0e0"]
+[ext_resource type="Script" uid="uid://b16ntrlltbi1o" path="res://Scripts/density_level.gd" id="1_ob0e0"]
 [ext_resource type="PackedScene" uid="uid://sj05lhda7c5m" path="res://Scenes/density_object.tscn" id="1_v1oej"]
 [ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_bh02q"]
 [ext_resource type="PackedScene" uid="uid://c5a8go2b2xi27" path="res://Scenes/liquid_container_density.tscn" id="2_v20jo"]
@@ -27,7 +27,7 @@ scale = Vector2(0.499768, 0.499768)
 texture = ExtResource("2_bh02q")
 
 [node name="Liquid1" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(176, 700)
+position = Vector2(176, 707)
 density = 0.0
 color = "32a852"
 

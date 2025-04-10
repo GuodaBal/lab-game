@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://c71fwrase544y"]
 
 [ext_resource type="Texture2D" uid="uid://em2fb8vt5o6y" path="res://Assets/Densities/megintuvelis.png" id="1_5mdo0"]
-[ext_resource type="Script" path="res://Scripts/density_vial.gd" id="1_6pfo1"]
+[ext_resource type="Script" uid="uid://d0sfd6bwm8eph" path="res://Scripts/density_vial.gd" id="1_6pfo1"]
 [ext_resource type="Texture2D" uid="uid://c4cixx3agfsa1" path="res://Assets/Densities/skystisdugnas.png" id="1_fcdry"]
-[ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="2_flj5l"]
+[ext_resource type="Shader" uid="uid://bebbnpac2jfrx" path="res://Assets/Shaders/water.gdshader" id="2_flj5l"]
 [ext_resource type="Texture2D" uid="uid://b1c4bup5x6p5m" path="res://Assets/Densities/skystis.png" id="2_i240x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ybdoy"]
@@ -15,6 +15,7 @@ shader_parameter/speed = 1.522
 shader_parameter/wave_scale_horizontal = 5.0
 shader_parameter/wave_scale_vertical = 0.2
 shader_parameter/random_start = 0.0
+shader_parameter/object_rotation = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cmm5l"]
 shader = ExtResource("2_flj5l")
@@ -25,6 +26,7 @@ shader_parameter/speed = 1.652
 shader_parameter/wave_scale_horizontal = 5.0
 shader_parameter/wave_scale_vertical = 0.2
 shader_parameter/random_start = 1.2
+shader_parameter/object_rotation = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2txjs"]
 shader = ExtResource("2_flj5l")
@@ -35,6 +37,7 @@ shader_parameter/speed = 1.359
 shader_parameter/wave_scale_horizontal = 5.0
 shader_parameter/wave_scale_vertical = 0.2
 shader_parameter/random_start = 0.5
+shader_parameter/object_rotation = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfsl4"]
 shader = ExtResource("2_flj5l")
@@ -45,6 +48,7 @@ shader_parameter/speed = 1.587
 shader_parameter/wave_scale_horizontal = 5.0
 shader_parameter/wave_scale_vertical = 0.2
 shader_parameter/random_start = 1.0
+shader_parameter/object_rotation = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t25gs"]
 radius = 62.0

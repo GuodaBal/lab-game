@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce0t58xboh4dy"]
 
 [ext_resource type="Texture2D" uid="uid://bcue4cqtxt8jc" path="res://Assets/Biologijos level/zemes.png" id="1_kt717"]
-[ext_resource type="Script" path="res://Scripts/planter_dirt.gd" id="2_u27ep"]
+[ext_resource type="Script" uid="uid://dfmkjomgy6plc" path="res://Scripts/planter_dirt.gd" id="2_u27ep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xta5"]
 size = Vector2(635.412, 751.304)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crqgo2j3b1uma"]
 
 [ext_resource type="Texture2D" uid="uid://bjcqb8f5htllc" path="res://Assets/Lighting_lamps/blueprint.png" id="2_2s1xr"]
-[ext_resource type="Script" path="res://Scripts/blueprint_open_close.gd" id="2_17vqs"]
+[ext_resource type="Script" uid="uid://coe6hadrqo1x0" path="res://Scripts/blueprint_open_close.gd" id="2_17vqs"]
 [ext_resource type="Texture2D" uid="uid://drbjd6bnw0s7f" path="res://Assets/Lighting_lamps/blueprintrolled.png" id="3_lohot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdj8w"]

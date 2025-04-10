@@ -18,11 +18,13 @@ func _physics_process(delta: float) -> void:
 func click():
 	closed = !closed
 	if closed:
+		GlobalAudioStreamPlayer.play_switch_sound()
 		sprite_off.visible = false
 		sprite_on.visible = true
 		if connected_to && connected_to.has_wire:
 			get_parent().get_parent().turn_on_wires()
 	else:
+		GlobalAudioStreamPlayer.play_switch_sound()
 		sprite_off.visible = true
 		sprite_on.visible = false
 		if connected_to && connected_to.has_wire:

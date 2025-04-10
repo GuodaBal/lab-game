@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmhvm74yeu1yk"]
 
-[ext_resource type="Script" path="res://Scripts/electronics_1.gd" id="1_7lutv"]
+[ext_resource type="Script" uid="uid://r7dw8djiyppw" path="res://Scripts/electronics_1.gd" id="1_7lutv"]
 [ext_resource type="PackedScene" uid="uid://crqgo2j3b1uma" path="res://Scenes/blueprint.tscn" id="1_tetpw"]
 [ext_resource type="Texture2D" uid="uid://ddw6wp5mcufc6" path="res://Assets/Lighting_lamps/fonas.png" id="2_53g1y"]
 [ext_resource type="PackedScene" uid="uid://dnj55vj4xadf6" path="res://Scenes/electric_item_destination.tscn" id="4_3qp2l"]
@@ -103,7 +103,7 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
-text = "[center]Light the lamps![/center]"
+text = "[center]Light the lightbulbs![/center]"
 
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true

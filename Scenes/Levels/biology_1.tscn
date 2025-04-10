@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dtvovapmgvg8b"]
 
-[ext_resource type="Script" path="res://Scripts/biology_1.gd" id="1_3pdqp"]
+[ext_resource type="Script" uid="uid://0tdfmnixpswe" path="res://Scripts/biology_1.gd" id="1_3pdqp"]
 [ext_resource type="PackedScene" uid="uid://b75x3osjrffww" path="res://Scenes/planter.tscn" id="1_etklx"]
 [ext_resource type="PackedScene" uid="uid://b2o1adap7mh8i" path="res://Scenes/planter_item.tscn" id="2_76hc5"]
 [ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_f7tpu"]

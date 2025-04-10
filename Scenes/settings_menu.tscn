@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://biff12c7vb888"]
 
-[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="1_o6nma"]
+[ext_resource type="Script" uid="uid://bo32smmnj0cqr" path="res://Scripts/settings_menu.gd" id="1_o6nma"]
 [ext_resource type="Texture2D" uid="uid://bxmxol6jthxqx" path="res://Assets/UI/Settings/fonassettings.png" id="2_g46h0"]
 [ext_resource type="Texture2D" uid="uid://cf2wu1jh4ient" path="res://Assets/UI/Settings/settings.png" id="3_2my76"]
 [ext_resource type="Theme" uid="uid://dfh7fbwsij8h2" path="res://Assets/UI/Main_menu/buttons.tres" id="4_3gcqj"]
@@ -116,6 +116,7 @@ alignment = 1
 selected = 0
 item_count = 7
 popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
 popup/item_1/text = "1760x990"
 popup/item_1/id = 1
 popup/item_2/text = "1600x900"

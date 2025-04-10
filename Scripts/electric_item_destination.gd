@@ -30,3 +30,4 @@ func powered_from_item():
 func depowered_from_item():
 	can_be_powered = false
 	get_tree().call_group("battery", "refresh")
+	
