@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtvovapmgvg8b"]
+
+[ext_resource type="Script" path="res://Scripts/biology_1.gd" id="1_3pdqp"]
+[ext_resource type="PackedScene" uid="uid://b75x3osjrffww" path="res://Scenes/planter.tscn" id="1_etklx"]
+[ext_resource type="PackedScene" uid="uid://b2o1adap7mh8i" path="res://Scenes/planter_item.tscn" id="2_76hc5"]
+[ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_f7tpu"]
+[ext_resource type="Texture2D" uid="uid://b4ufo1vvhua8k" path="res://Assets/Biologijos level/trasos.png" id="5_q4do7"]
+[ext_resource type="Texture2D" uid="uid://bdvtmdkyp56o4" path="res://Assets/Biologijos level/seeds.png" id="6_wavin"]
+[ext_resource type="Texture2D" uid="uid://bcue4cqtxt8jc" path="res://Assets/Biologijos level/zemes.png" id="8_nml04"]
+[ext_resource type="Texture2D" uid="uid://b6xk1b1scbopp" path="res://Assets/Biologijos level/laistytuvas.png" id="8_tgt1h"]
+[ext_resource type="PackedScene" uid="uid://b3572lf6y0trl" path="res://Scenes/planter_lamp.tscn" id="9_1y44x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvp5c"]
+size = Vector2(750.437, 946.029)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prkf3"]
+size = Vector2(509.186, 488.981)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0e8l"]
+size = Vector2(650, 708)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47jn6"]
+size = Vector2(518.48, 486.451)
+
+[node name="biology_1" type="Node2D"]
+script = ExtResource("1_3pdqp")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(955.556, 537.5)
+scale = Vector2(0.502315, 0.502315)
+texture = ExtResource("2_f7tpu")
+
+[node name="Planter" parent="." instance=ExtResource("1_etklx")]
+position = Vector2(937, 701)
+
+[node name="Lamp" parent="." instance=ExtResource("9_1y44x")]
+order = Array[int]([6])
+
+[node name="Water" parent="." instance=ExtResource("2_76hc5")]
+position = Vector2(960.778, 541.875)
+scale = Vector2(0.501042, 0.501042)
+texture = ExtResource("8_tgt1h")
+order = Array[int]([3, 5])
+
+[node name="CollisionShape2D" parent="Water/Area2D" index="0"]
+position = Vector2(1337.66, -93.5549)
+shape = SubResource("RectangleShape2D_tvp5c")
+
+[node name="Fertilizer" parent="." instance=ExtResource("2_76hc5")]
+position = Vector2(952, 537)
+scale = Vector2(0.494907, 0.494907)
+texture = ExtResource("5_q4do7")
+order = Array[int]([4])
+
+[node name="CollisionShape2D" parent="Fertilizer/Area2D" index="0"]
+position = Vector2(-1384.1, 608.195)
+shape = SubResource("RectangleShape2D_prkf3")
+
+[node name="Dirt" parent="." instance=ExtResource("2_76hc5")]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_nml04")
+order = Array[int]([1])
+
+[node name="CollisionShape2D" parent="Dirt/Area2D" index="0"]
+position = Vector2(851, 698)
+shape = SubResource("RectangleShape2D_f0e8l")
+
+[node name="Seeds" parent="." instance=ExtResource("2_76hc5")]
+position = Vector2(958.333, 542.5)
+scale = Vector2(0.499537, 0.499537)
+texture = ExtResource("6_wavin")
+order = Array[int]([2])
+
+[node name="CollisionShape2D" parent="Seeds/Area2D" index="0"]
+position = Vector2(-846.45, 788.73)
+shape = SubResource("RectangleShape2D_47jn6")
+
+[node name="hint" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 1.0
+offset_top = -0.575
+offset_right = 1918.0
+offset_bottom = 131.425
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 93
+bbcode_enabled = true
+text = "[center]Grow the plant![/center]"
+
+[editable path="Water"]
+[editable path="Fertilizer"]
+[editable path="Dirt"]
+[editable path="Seeds"]

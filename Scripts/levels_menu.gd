@@ -9,6 +9,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HBoxContainer2/RichTextLabel4.text = str(GlobalVariables.stars_collected.size())
 	var colors = {"Blue": "","Purple": "PurpleLevelButton","Green": "GreenLevelButton","Yellow": "YellowLevelButton","Red": "RedLevelButton"}
 	var subjects = ["physics", "astronomy", "chemistry", "electronics", "biology"]
 	for row in rows:
@@ -22,7 +23,7 @@ func _ready() -> void:
 			
 			button_instance.level = subjects[i] + "_" + str(row + 1)
 			container.add_child(button_instance)
-			if star_count_needed[row] > GlobalVariables.stars_collected:
+			if star_count_needed[row] > GlobalVariables.stars_collected.size():
 				button_instance.disabled = true
 
 

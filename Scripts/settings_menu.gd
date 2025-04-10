@@ -25,11 +25,6 @@ func _ready() -> void:
 	$CanvasLayer/GraphicsSelect.button_group = group
 	$CanvasLayer/SoundSelect.button_group = group
 	
-	#Makes the setting buttons display the chosen settings
-	if DisplayServer.window_get_mode() == 3:
-		Fullscreen.text = "On"
-	else:
-		Fullscreen.text = "Off"
 	#for index in ResolutionSelector.item_count:
 		#if ResolutionSelector.get_item_text(index) == str(Settings.resolution_x)+"x"+str(Settings.resolution_y):
 			#ResolutionSelector.select(index)
@@ -52,11 +47,12 @@ func _on_back_pressed() -> void:
 	#var save_data = {}
 	#save_data["settings"] = Settings.save_data()
 	#save_file.store_string(JSON.stringify(save_data))
-	#if get_parent().get_parent() == null:
+	if get_parent().get_parent() == null:
 		GlobalAudioStreamPlayer.play_click_sound()
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-	#else:
-		#queue_free()
+	else:
+		GlobalAudioStreamPlayer.play_click_sound()
+		queue_free()
 
 func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	GlobalAudioStreamPlayer.play_click_sound()

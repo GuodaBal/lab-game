@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=3 uid="uid://b75x3osjrffww"]
+
+[ext_resource type="Texture2D" uid="uid://bk8144ddtwhhm" path="res://Assets/Biologijos level/vazonas_tuscias.png" id="1_1i4qu"]
+[ext_resource type="Texture2D" uid="uid://cj6jgcv4m7abg" path="res://Assets/Biologijos level/vazonas_pilnas.png" id="2_br2gk"]
+[ext_resource type="Script" path="res://Scripts/planter.gd" id="2_h0vf3"]
+[ext_resource type="Texture2D" uid="uid://c57cvcyypwjcq" path="res://Assets/Biologijos level/augaliukas1.png" id="3_bfydq"]
+[ext_resource type="Texture2D" uid="uid://b8ggrauy5igqb" path="res://Assets/Biologijos level/augaliukas2.png" id="4_kpsfx"]
+[ext_resource type="Texture2D" uid="uid://b7vpxfecdqd3p" path="res://Assets/Biologijos level/augaliukas3.png" id="5_xhv45"]
+[ext_resource type="Texture2D" uid="uid://cfm38uijstoko" path="res://Assets/Biologijos level/augaliukas4.png" id="6_qhkqq"]
+[ext_resource type="Texture2D" uid="uid://cdnl4m6g7h5ku" path="res://Assets/Biologijos level/augaliukas5.png" id="7_lnpla"]
+[ext_resource type="Texture2D" uid="uid://4u5ui7dvsmve" path="res://Assets/Biologijos level/augaliukas6.png" id="8_y0pie"]
+[ext_resource type="Texture2D" uid="uid://cg41cxnhcuj0a" path="res://Assets/Biologijos level/augaliukas7.png" id="9_jxtdr"]
+[ext_resource type="Texture2D" uid="uid://c3owyt40gu1kp" path="res://Assets/Biologijos level/augaliukas8.png" id="10_154ix"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbwll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1i4qu")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_br2gk")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c40tp"]
+size = Vector2(958.442, 1025.97)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00hdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bfydq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bfydq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kpsfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xhv45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qhkqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lnpla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y0pie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jxtdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_154ix")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 7.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" groups=["planter"]]
+scale = Vector2(0.385, 0.385)
+sprite_frames = SubResource("SpriteFrames_tbwll")
+animation = &"1"
+script = ExtResource("2_h0vf3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(35.065, 367.533)
+shape = SubResource("RectangleShape2D_c40tp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_00hdl")

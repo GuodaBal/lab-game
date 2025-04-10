@@ -41,6 +41,7 @@ region = Rect2(353, 209, 152, 98)
 [node name="Menu" type="Control"]
 process_mode = 3
 top_level = true
+z_index = 4
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,6 +140,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("5_yydgy")
+button_pressed = true
 vertical_icon_alignment = 0
 expand_icon = true
 

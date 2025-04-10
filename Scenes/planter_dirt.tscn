@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce0t58xboh4dy"]
+
+[ext_resource type="Texture2D" uid="uid://bcue4cqtxt8jc" path="res://Assets/Biologijos level/zemes.png" id="1_kt717"]
+[ext_resource type="Script" path="res://Scripts/planter_dirt.gd" id="2_u27ep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xta5"]
+size = Vector2(635.412, 751.304)
+
+[node name="Dirt" type="Sprite2D"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("1_kt717")
+script = ExtResource("2_u27ep")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(852.988, 674.376)
+shape = SubResource("RectangleShape2D_1xta5")

@@ -32,7 +32,7 @@ scale = Vector2(0.739198, 0.739198)
 texture = SubResource("AtlasTexture_20j2l")
 
 [node name="SpriteOff" type="Sprite2D" parent="."]
-position = Vector2(-1.1219, -58.2935)
+position = Vector2(-2, -61)
 scale = Vector2(0.739, 0.739)
 texture = SubResource("AtlasTexture_j24ar")
 

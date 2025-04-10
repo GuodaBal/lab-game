@@ -42,12 +42,13 @@ func deselect():
 	is_selected = false
 	apply_impulse(Vector2(0,0))
 	var distances = {}
-	for area in $Area2D.get_overlapping_areas():
-		var node = area.get_parent()
-		if node.is_in_group("slot") && node.fits_id == fits_id && node.occupied == false:
-			distances[abs((node.position - position).length())] = node
-	if distances.size() > 0:
-		var closest = distances.keys().min()
-		gravity_scale = 0.0
-		connected_to = distances[closest]
-		distances[closest].occupied = true
+	if $Area2D:
+		for area in $Area2D.get_overlapping_areas():
+			var node = area.get_parent()
+			if node.is_in_group("slot") && node.fits_id == fits_id && node.occupied == false:
+				distances[abs((node.position - position).length())] = node
+		if distances.size() > 0:
+			var closest = distances.keys().min()
+			gravity_scale = 0.0
+			connected_to = distances[closest]
+			distances[closest].occupied = true

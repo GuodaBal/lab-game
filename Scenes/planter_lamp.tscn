@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3572lf6y0trl"]
+
+[ext_resource type="Texture2D" uid="uid://cqercqsuf35vq" path="res://Assets/Biologijos level/lempa_off.png" id="1_ubfqx"]
+[ext_resource type="Texture2D" uid="uid://b7mfs4sx1au0x" path="res://Assets/Biologijos level/lempa_on.png" id="2_3yb2k"]
+[ext_resource type="Script" path="res://Scripts/planter_lamp.gd" id="3_8sey8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_laiu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ubfqx")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3yb2k")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7sng"]
+size = Vector2(860.423, 1363.16)
+
+[node name="Lamp" type="AnimatedSprite2D"]
+position = Vector2(953.778, 536.5)
+scale = Vector2(0.503241, 0.503241)
+sprite_frames = SubResource("SpriteFrames_laiu1")
+animation = &"off"
+script = ExtResource("3_8sey8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-646.366, -209.641)
+shape = SubResource("RectangleShape2D_j7sng")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

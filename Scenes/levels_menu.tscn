@@ -187,4 +187,28 @@ texture = SubResource("AtlasTexture_mo657")
 expand_mode = 3
 stretch_mode = 4
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1719.0
+offset_top = 56.0
+offset_right = 2089.0
+offset_bottom = 256.0
+scale = Vector2(0.55, 0.55)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.278431, 0.184314, 0.0392157, 1)
+theme_override_font_sizes/normal_font_size = 145
+bbcode_enabled = true
+text = "[center]10[/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="TextureRect9" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1nn8i")
+expand_mode = 2
+stretch_mode = 4
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
