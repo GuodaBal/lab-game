@@ -4,6 +4,7 @@ extends "level.gd"
 @onready var item_destinations = $ItemDestinations
 
 func _input(event: InputEvent) -> void:
+	super(event)
 	var level_complete = true
 	if Input.is_action_just_released("click") && !complete:
 		#await get_tree().physics_frame

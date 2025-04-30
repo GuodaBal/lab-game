@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6xq7nyngbb8"]
+
+[ext_resource type="Script" uid="uid://bit0hrjftpmgd" path="res://Scripts/laser.gd" id="1_r1bh0"]
+[ext_resource type="Texture2D" uid="uid://ctum3vlgdmf6" path="res://icon.svg" id="2_mou6w"]
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_r1bh0")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(1000, 0)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 5.0
+default_color = Color(0.883476, 0, 0.217612, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.1875, 0.21875)
+texture = ExtResource("2_mou6w")

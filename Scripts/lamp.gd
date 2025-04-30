@@ -11,20 +11,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	super(delta)
-
 	if connected_to:
 		var close_enough = position.distance_to(connected_to.position) < 5
-
 		if close_enough:
 			if !was_snapped:
 				# Just got placed in
 				GlobalAudioStreamPlayer.play_place_sound()
 				was_snapped = true
-
 				for child in get_children():
 					if child is CollisionShape2D:
 						child.disabled = true
-
 			# Lock it in place
 			freeze = true
 		else:

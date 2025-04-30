@@ -1,6 +1,5 @@
 extends "level.gd"
 
-
 func _input(event: InputEvent) -> void:
 	super(event)
 	var level_complete = true
@@ -9,13 +8,8 @@ func _input(event: InputEvent) -> void:
 		for node in get_children():
 			if node.is_in_group("item"):
 				GlobalAudioStreamPlayer.play_place_sound()
-				if !node.connected_to || node.connected_to.correct_id != node.correct_id:
+				if (!node.connected_to && node.correct_id != 0) || (node.connected_to && node.connected_to.correct_id != node.correct_id):
 					level_complete = false
 					break
 		if level_complete:
 			level_complete(true)
-			
-
-func _on_button_pressed() -> void:
-	GlobalAudioStreamPlayer.play_click_sound()
-	return_to_main()

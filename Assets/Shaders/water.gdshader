@@ -13,7 +13,7 @@ uniform float object_rotation = 0.0;
 void fragment() {
     // Transparent background
     vec4 col = vec4(0.0, 0.0, 0.0, 0.0);
-    
+
     // Center UV coordinates (pivot at center)
     vec2 centered_uv = UV - vec2(0.5);
 

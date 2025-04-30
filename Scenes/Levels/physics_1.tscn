@@ -1,93 +1,98 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbxe3lj5w0arb"]
+[gd_scene load_steps=7 format=3 uid="uid://dldqu6cu6uxle"]
 
-[ext_resource type="Script" uid="uid://b16ntrlltbi1o" path="res://Scripts/density_level.gd" id="1_ob0e0"]
-[ext_resource type="PackedScene" uid="uid://sj05lhda7c5m" path="res://Scenes/density_object.tscn" id="1_v1oej"]
-[ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_bh02q"]
-[ext_resource type="PackedScene" uid="uid://c5a8go2b2xi27" path="res://Scenes/liquid_container_density.tscn" id="2_v20jo"]
-[ext_resource type="PackedScene" uid="uid://c71fwrase544y" path="res://Scenes/density_vial.tscn" id="3_0vbu8"]
+[ext_resource type="PackedScene" uid="uid://cu6xq7nyngbb8" path="res://Scenes/laser.tscn" id="1_vgrc4"]
+[ext_resource type="Script" uid="uid://xb110xy1ajyy" path="res://Scripts/physics_1.gd" id="1_xyh2n"]
+[ext_resource type="PackedScene" uid="uid://wa1613npf70o" path="res://Scenes/lens.tscn" id="2_i0cxi"]
+[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_oyxh5"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ib3b2"]
-rough = true
+[sub_resource type="Gradient" id="Gradient_xyh2n"]
+offsets = PackedFloat32Array(0.913793, 0.968966)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu0ly"]
-size = Vector2(1916, 218)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lgubw"]
+gradient = SubResource("Gradient_xyh2n")
+fill = 1
+fill_from = Vector2(0.521368, 0.504274)
+fill_to = Vector2(0.517094, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_la1kb"]
-size = Vector2(120, 1090)
+[node name="physics_1" type="Node2D"]
+script = ExtResource("1_xyh2n")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbctx"]
-size = Vector2(2166, 127)
+[node name="Laser" parent="." instance=ExtResource("1_vgrc4")]
+position = Vector2(199, 677)
+intensity = 2.89
 
-[node name="Find_densities" type="Node2D"]
-script = ExtResource("1_ob0e0")
+[node name="Laser2" parent="." instance=ExtResource("1_vgrc4")]
+position = Vector2(199, 577)
 
-[node name="BG" type="Sprite2D" parent="."]
-position = Vector2(959.889, 540.25)
-scale = Vector2(0.499768, 0.499768)
-texture = ExtResource("2_bh02q")
+[node name="Laser4" parent="." instance=ExtResource("1_vgrc4")]
+position = Vector2(199, 477)
+intensity = -1.0
 
-[node name="Liquid1" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(176, 707)
-density = 0.0
-color = "32a852"
+[node name="Laser5" parent="." instance=ExtResource("1_vgrc4")]
+position = Vector2(199, 377)
+intensity = -2.89
 
-[node name="Liquid2" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(486, 722)
-density = 2.0
-color = "757fe0"
+[node name="Lens" parent="." groups=["item"] instance=ExtResource("2_i0cxi")]
+position = Vector2(583, 185.76)
+scale = Vector2(1.025, 2.33)
+bending_degrees = -7
+correct_id = 4
 
-[node name="Liquid3" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(1400, 722)
-density = 3.0
-color = "a834b3"
+[node name="Lens2" parent="." groups=["item"] instance=ExtResource("2_i0cxi")]
+position = Vector2(765, 185.76)
+scale = Vector2(1.025, 2.33)
+bending_degrees = 2
 
-[node name="Liquid4" parent="." instance=ExtResource("2_v20jo")]
-position = Vector2(1718, 706)
-color = "f5985b"
+[node name="Lens3" parent="." groups=["item"] instance=ExtResource("2_i0cxi")]
+position = Vector2(967, 185.76)
+scale = Vector2(1.025, 2.33)
+bending_degrees = -4
+correct_id = 1
 
-[node name="Density1" parent="." instance=ExtResource("1_v1oej")]
-modulate = Color(0.698039, 1, 1, 1)
-position = Vector2(1111, 583)
-density = 3.0
+[node name="Lens4" parent="." groups=["item"] instance=ExtResource("2_i0cxi")]
+position = Vector2(1193, 185.76)
+scale = Vector2(1.025, 2.33)
+bending_degrees = 6
+correct_id = 2
 
-[node name="Density2" parent="." instance=ExtResource("1_v1oej")]
-modulate = Color(0.827451, 1, 0.803922, 1)
-position = Vector2(1157, 774)
-density = 2.0
+[node name="Lens5" parent="." groups=["item"] instance=ExtResource("2_i0cxi")]
+position = Vector2(1419, 185.76)
+scale = Vector2(1.025, 2.33)
+bending_degrees = 8
 
-[node name="Density3" parent="." instance=ExtResource("1_v1oej")]
-modulate = Color(1, 0.760784, 1, 1)
-position = Vector2(701, 789)
+[node name="Item_destination" parent="." instance=ExtResource("3_oyxh5")]
+position = Vector2(312, 553)
+correct_id = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_ib3b2")
+[node name="Item_destination2" parent="." instance=ExtResource("3_oyxh5")]
+position = Vector2(501, 548)
+correct_id = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(962, 972)
-shape = SubResource("RectangleShape2D_hu0ly")
+[node name="Item_destination3" parent="." instance=ExtResource("3_oyxh5")]
+position = Vector2(700, 549)
+correct_id = 3
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-56, 535)
-shape = SubResource("RectangleShape2D_la1kb")
+[node name="Item_destination4" parent="." instance=ExtResource("3_oyxh5")]
+position = Vector2(938, 548)
+correct_id = 4
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1980, 539)
-shape = SubResource("RectangleShape2D_la1kb")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(965, -69.5)
-shape = SubResource("RectangleShape2D_wbctx")
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_0vbu8")]
-position = Vector2(948, 639)
+[node name="Item_destination5" parent="." instance=ExtResource("3_oyxh5")]
+position = Vector2(1188, 546)
+correct_id = 5
 
 [node name="hint" type="RichTextLabel" parent="."]
 z_index = 2
 offset_left = 1.0
-offset_top = -5.0
+offset_top = -0.575
 offset_right = 1918.0
-offset_bottom = 127.0
+offset_bottom = 131.425
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
-text = "[center]Don't mix the liquids![/center]"
+text = "[center]Hit the dot![/center]"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1488, 524)
+texture = SubResource("GradientTexture2D_lgubw")
