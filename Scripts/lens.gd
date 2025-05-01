@@ -21,6 +21,7 @@ func select():
 	
 func deselect():
 	super()
+	GlobalAudioStreamPlayer.play_glasshit_sound()
 	if connected_to == null:
 		area.set_collision_layer_value(3, false)
 		position = org_position

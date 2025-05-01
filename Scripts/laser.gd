@@ -24,6 +24,11 @@ func update():
 	var previous_collision_point = raycast.global_position
 
 	while raycast.is_colliding():
+		if raycast.get_collider() is StaticBody2D:
+			var current_collision_point = raycast.get_collision_point()
+			var local_col = line.to_local(current_collision_point)
+			line.add_point(local_col)
+			break
 		var current_collision_point = raycast.get_collision_point()
 		var local_col = line.to_local(current_collision_point)
 		line.add_point(local_col)

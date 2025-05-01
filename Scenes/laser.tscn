@@ -10,11 +10,10 @@ script = ExtResource("1_r1bh0")
 target_position = Vector2(1000, 0)
 collision_mask = 4
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="Line2D" type="Line2D" parent="."]
 width = 5.0
-default_color = Color(0.883476, 0, 0.217612, 1)
+default_color = Color(0.613336, 0, 0.139124, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2

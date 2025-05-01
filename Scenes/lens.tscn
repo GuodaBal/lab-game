@@ -7,7 +7,7 @@ width = 97
 height = 207
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5aujh"]
-size = Vector2(100, 213)
+size = Vector2(100, 653)
 
 [node name="Lens" type="Sprite2D" groups=["draggable_objects"]]
 texture = SubResource("NoiseTexture2D_26vvl")
@@ -18,5 +18,5 @@ collision_layer = 5
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.999999, 2.5)
+position = Vector2(0.999999, -2.5)
 shape = SubResource("RectangleShape2D_5aujh")
