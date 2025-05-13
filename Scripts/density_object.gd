@@ -5,6 +5,8 @@ var floating_power
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var collision_shape := $CollisionShape2D as CollisionShape2D
+@onready var shadow := $shadow as Sprite2D
+@onready var raycast := $RayCast2D as RayCast2D
 
 var is_selected = false
 var click_offset = Vector2(0,0)
@@ -15,10 +17,14 @@ var water
 var underwater = false
 
 func _physics_process(delta: float) -> void:
+	raycast.global_rotation = 0
+	if raycast.is_colliding():
+		shadow.global_position = raycast.get_collision_point() + Vector2(0, -25)
+		shadow.global_rotation = 0
 	if is_selected:
 		var direction = get_global_mouse_position() - position
-		var target_velocity = (direction*10.0).limit_length(1000)
-		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.2))
+		var target_velocity = (direction*10.0).limit_length(2000)
+		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.6))
 		#PhysicsServer2D.body_set_state(get_rid(),
 		#PhysicsServer2D.BODY_STATE_TRANSFORM,
 		#Transform2D.IDENTITY.translated(get_global_mouse_position()))

@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmhvm74yeu1yk"]
+
+[ext_resource type="Script" uid="uid://r7dw8djiyppw" path="res://Scripts/electronics_1.gd" id="1_0a4fc"]
+[ext_resource type="Texture2D" uid="uid://ddw6wp5mcufc6" path="res://Assets/Lighting_lamps/fonas.png" id="2_hf43h"]
+[ext_resource type="PackedScene" uid="uid://dnj55vj4xadf6" path="res://Scenes/electric_item_destination.tscn" id="3_6em66"]
+[ext_resource type="PackedScene" uid="uid://crqgo2j3b1uma" path="res://Scenes/blueprint.tscn" id="4_phpda"]
+[ext_resource type="PackedScene" uid="uid://cvy2bdt1fivwq" path="res://Scenes/lamp.tscn" id="5_bhsed"]
+[ext_resource type="PackedScene" uid="uid://c48hsvo00f11j" path="res://Scenes/battery.tscn" id="6_rwwep"]
+[ext_resource type="PackedScene" uid="uid://cjy3y36bmcohs" path="res://Scenes/switch.tscn" id="7_nk0c7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62yg2"]
+size = Vector2(1947, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtaa1"]
+size = Vector2(66, 1116)
+
+[node name="electronics_1" type="Node2D"]
+script = ExtResource("1_0a4fc")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(960.889, 540.5)
+scale = Vector2(0.499537, 0.499537)
+texture = ExtResource("2_hf43h")
+
+[node name="ItemDestinations" type="Node2D" parent="."]
+
+[node name="0" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(791, 701)
+
+[node name="1" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1022, 701)
+has_wire = true
+
+[node name="2" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1259, 701)
+has_wire = true
+
+[node name="3" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1496, 701)
+has_wire = true
+correct_id = 1
+
+[node name="4" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(763, 767)
+
+[node name="5" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1013, 769)
+has_wire = true
+correct_id = 1
+
+[node name="6" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1267, 769)
+has_wire = true
+
+[node name="7" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1520, 771)
+has_wire = true
+
+[node name="8" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(729, 845)
+has_wire = true
+
+[node name="9" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1004, 847)
+has_wire = true
+
+[node name="10" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1274, 846)
+has_wire = true
+correct_id = 2
+
+[node name="11" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1550, 846)
+has_wire = true
+correct_id = 3
+
+[node name="12" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(696, 925)
+has_wire = true
+
+[node name="13" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(995, 923)
+has_wire = true
+
+[node name="14" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1281, 924)
+has_wire = true
+
+[node name="15" parent="ItemDestinations" instance=ExtResource("3_6em66")]
+position = Vector2(1574, 923)
+has_wire = true
+
+[node name="Blueprint" parent="." instance=ExtResource("4_phpda")]
+position = Vector2(-1, 4)
+
+[node name="hint" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 1.0
+offset_top = 103.0
+offset_right = 1918.0
+offset_bottom = 235.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 93
+bbcode_enabled = true
+text = "[center]Light the lightbulbs![/center]"
+
+[node name="Items" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Lamp" parent="Items" instance=ExtResource("5_bhsed")]
+position = Vector2(1705, 956)
+correct_id = 1
+
+[node name="Lamp2" parent="Items" instance=ExtResource("5_bhsed")]
+position = Vector2(1854, 943)
+correct_id = 1
+
+[node name="battery" parent="Items" instance=ExtResource("6_rwwep")]
+position = Vector2(370, 1009)
+scale = Vector2(1, 0.951282)
+correct_id = 3
+
+[node name="switch" parent="Items" instance=ExtResource("7_nk0c7")]
+position = Vector2(124, 998)
+correct_id = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(963.5, 1084)
+shape = SubResource("RectangleShape2D_62yg2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(958, -15)
+shape = SubResource("RectangleShape2D_62yg2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-19, 548)
+shape = SubResource("RectangleShape2D_dtaa1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1952, 537)
+shape = SubResource("RectangleShape2D_dtaa1")
+
+[node name="Table" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table"]
+polygon = PackedVector2Array(166, 580, 1752, 584, 2266, 1152, -285, 1159)

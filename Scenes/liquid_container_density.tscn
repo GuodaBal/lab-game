@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5a8go2b2xi27"]
+[gd_scene load_steps=18 format=3 uid="uid://c5a8go2b2xi27"]
 
 [ext_resource type="Script" uid="uid://pg2c51rr0j11" path="res://Scripts/liquid_container_density.gd" id="1_4i7g5"]
 [ext_resource type="Script" uid="uid://d4cjgnj7etmhe" path="res://Scripts/density_liquid_sprite_area.gd" id="2_in1e6"]
 [ext_resource type="Shader" uid="uid://bebbnpac2jfrx" path="res://Assets/Shaders/water.gdshader" id="2_v2oku"]
 [ext_resource type="Texture2D" uid="uid://dcltf0ldecau5" path="res://Assets/Densities/liquid.png" id="3_qtm01"]
-[ext_resource type="Texture2D" uid="uid://b5pa7434wqe81" path="res://Assets/Densities/beaker.png" id="5_yisew"]
+[ext_resource type="Texture2D" uid="uid://m8bj0gh0qcrp" path="res://Assets/Shaders/Particles/droplets2.png" id="4_nl24k"]
 [ext_resource type="Texture2D" uid="uid://b0nnkvbjkj8pd" path="res://Assets/Densities/stiklineisore.png" id="6_w5qkh"]
 [ext_resource type="Texture2D" uid="uid://et6ws6h465be" path="res://Assets/Densities/stiklinegalas.png" id="7_avnw4"]
+[ext_resource type="Texture2D" uid="uid://ctsloe8v0obax" path="res://Assets/Shaders/shadow.png" id="8_7bq5k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_trdxc"]
 friction = 0.13
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0rv4"]
-size = Vector2(245, 259.888)
+size = Vector2(245, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxja"]
 size = Vector2(279.85, 290.35)
@@ -23,6 +24,20 @@ size = Vector2(19, 308.668)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6c7r"]
 custom_solver_bias = 1.0
 size = Vector2(280, 8.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7bq5k"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_05feq"]
+_data = [Vector2(0, 0.488387), 0.0, 0.0, 0, 0, Vector2(1, 0.110968), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7bq5k"]
+offsets = PackedFloat32Array(0.416084, 0.909091)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3862q"]
 shader = ExtResource("2_v2oku")
@@ -49,7 +64,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidArea"]
-position = Vector2(131.5, 126.944)
+position = Vector2(131.5, 156.888)
 shape = SubResource("RectangleShape2D_b0rv4")
 
 [node name="SpriteArea" type="Area2D" parent="."]
@@ -61,13 +76,6 @@ script = ExtResource("2_in1e6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteArea"]
 position = Vector2(126.225, 135.475)
 shape = SubResource("RectangleShape2D_3kxja")
-
-[node name="Beaker" type="Sprite2D" parent="."]
-visible = false
-z_index = 2
-position = Vector2(1.14999, 50.1118)
-scale = Vector2(0.5966, 0.628447)
-texture = ExtResource("5_yisew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-127.35, 45.5559)
@@ -86,7 +94,35 @@ position = Vector2(-13.5, 62.75)
 scale = Vector2(0.933, 0.762)
 texture = ExtResource("7_avnw4")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_7bq5k")
+emitting = false
+amount = 5
+texture = ExtResource("4_nl24k")
+lifetime = 1.2
+one_shot = true
+explosiveness = 0.65
+emission_shape = 3
+emission_rect_extents = Vector2(50, 1)
+direction = Vector2(0, -1)
+spread = 35.3
+initial_velocity_min = 514.97
+initial_velocity_max = 700.6
+angular_velocity_min = -284.55
+scale_amount_curve = SubResource("Curve_05feq")
+color_ramp = SubResource("Gradient_7bq5k")
+anim_offset_max = 1.0
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.619608)
+z_as_relative = false
+position = Vector2(1, 174)
+scale = Vector2(0.364, 0.099)
+texture = ExtResource("8_7bq5k")
+
 [node name="Liquid" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 material = SubResource("ShaderMaterial_3862q")
 position = Vector2(-152.85, -106.888)
 scale = Vector2(0.5206, 0.5206)
@@ -94,10 +130,16 @@ texture = ExtResource("3_qtm01")
 centered = false
 
 [node name="Beaker_front" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 1
+z_as_relative = false
 position = Vector2(-12.5, 61.75)
 scale = Vector2(0.9335, 0.7615)
 texture = ExtResource("6_w5qkh")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 2000)
+collision_mask = 8
+hit_from_inside = true
 
 [connection signal="body_entered" from="LiquidArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LiquidArea" to="." method="_on_area_2d_body_exited"]

@@ -2,6 +2,9 @@ extends RigidBody2D
 
 @onready var liquid := $LiquidArea as Area2D
 @onready var liquidSprite := $Liquid as Sprite2D
+@onready var particles := $CPUParticles2D as CPUParticles2D
+@onready var raycast := $RayCast2D as RayCast2D
+@onready var shadow := $shadow as Sprite2D
 
 @export var density = 1.0
 @export var drag = 0.07
@@ -15,6 +18,7 @@ var original_position
 func _ready() -> void:
 	original_position = position
 	liquidSprite.modulate = color
+	particles.modulate = color
 	contact_monitor = true
 	max_contacts_reported = 1  # Max simultaneous contacts you want to track
 	
@@ -26,11 +30,15 @@ func _ready() -> void:
 	liquidSprite.material.set_shader_parameter("speed", randf_range(0.5, 2.0))
 
 func _process(delta: float) -> void:
+	raycast.global_rotation = 0
+	if raycast.is_colliding():
+		shadow.global_position = raycast.get_collision_point() + Vector2(0, -25)
+		shadow.global_rotation = 0
 	liquidSprite.material.set_shader_parameter("object_rotation", rotation)
 	if is_selected:
 		var direction = get_global_mouse_position() - position + click_offset
-		var target_velocity = (direction*10.0).limit_length(1000)
-		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.1))
+		var target_velocity = (direction*10.0).limit_length(1200)
+		set_linear_velocity(lerp(get_linear_velocity(), target_velocity, 0.3))
 	if abs(rotation_degrees) > 45 && !empty:
 		#Fail if liquid is spilled
 		empty_container()
@@ -38,6 +46,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.water = self
+	particles.emitting = true
 	GlobalAudioStreamPlayer.play_splash_sound()
 	print_debug(body)
 
@@ -61,6 +70,7 @@ func empty_container():
 	liquid.set_deferred("monitoring", false)
 	GlobalAudioStreamPlayer.play_pour_sound()
 	empty = true
+	shadow.modulate = "ffffff2c"
 
 var has_collided := false
 var last_sound_time := 0.0

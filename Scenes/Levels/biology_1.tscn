@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtvovapmgvg8b"]
+[gd_scene load_steps=15 format=3 uid="uid://dtvovapmgvg8b"]
 
 [ext_resource type="Script" uid="uid://0tdfmnixpswe" path="res://Scripts/biology_1.gd" id="1_3pdqp"]
 [ext_resource type="PackedScene" uid="uid://b75x3osjrffww" path="res://Scenes/planter.tscn" id="1_etklx"]
 [ext_resource type="PackedScene" uid="uid://b2o1adap7mh8i" path="res://Scenes/planter_item.tscn" id="2_76hc5"]
-[ext_resource type="Texture2D" uid="uid://ch7w67mn5p15" path="res://Assets/fonas2.png" id="2_f7tpu"]
+[ext_resource type="Texture2D" uid="uid://7sng2u05gxho" path="res://Assets/Bgs/gamta.png" id="2_wf61v"]
 [ext_resource type="Texture2D" uid="uid://b4ufo1vvhua8k" path="res://Assets/Biologijos level/trasos.png" id="5_q4do7"]
 [ext_resource type="Texture2D" uid="uid://bdvtmdkyp56o4" path="res://Assets/Biologijos level/seeds.png" id="6_wavin"]
 [ext_resource type="Texture2D" uid="uid://bcue4cqtxt8jc" path="res://Assets/Biologijos level/zemes.png" id="8_nml04"]
 [ext_resource type="Texture2D" uid="uid://b6xk1b1scbopp" path="res://Assets/Biologijos level/laistytuvas.png" id="8_tgt1h"]
 [ext_resource type="PackedScene" uid="uid://b3572lf6y0trl" path="res://Scenes/planter_lamp.tscn" id="9_1y44x"]
+[ext_resource type="Texture2D" uid="uid://ctsloe8v0obax" path="res://Assets/Shaders/shadow.png" id="10_wf61v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvp5c"]
 size = Vector2(750.437, 946.029)
@@ -28,15 +29,19 @@ script = ExtResource("1_3pdqp")
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(955.556, 537.5)
 scale = Vector2(0.502315, 0.502315)
-texture = ExtResource("2_f7tpu")
+texture = ExtResource("2_wf61v")
 
 [node name="Planter" parent="." instance=ExtResource("1_etklx")]
+z_index = 1
 position = Vector2(937, 701)
 
 [node name="Lamp" parent="." instance=ExtResource("9_1y44x")]
+z_index = 1
+position = Vector2(960, 534)
 order = Array[int]([6])
 
 [node name="Water" parent="." instance=ExtResource("2_76hc5")]
+z_index = 1
 position = Vector2(960.778, 541.875)
 scale = Vector2(0.501042, 0.501042)
 texture = ExtResource("8_tgt1h")
@@ -46,7 +51,18 @@ order = Array[int]([3, 5])
 position = Vector2(1337.66, -93.5549)
 shape = SubResource("RectangleShape2D_tvp5c")
 
+[node name="shadow" parent="Water" index="1"]
+position = Vector2(1341.65, 323.576)
+scale = Vector2(0.69555, 0.161205)
+
+[node name="RayCast2D" parent="Water" index="2"]
+position = Vector2(1340.36, 255.804)
+
+[node name="RayCast2D2" parent="Water" index="3"]
+position = Vector2(1340.36, 213.804)
+
 [node name="Fertilizer" parent="." instance=ExtResource("2_76hc5")]
+z_index = 1
 position = Vector2(952, 537)
 scale = Vector2(0.494907, 0.494907)
 texture = ExtResource("5_q4do7")
@@ -56,7 +72,18 @@ order = Array[int]([4])
 position = Vector2(-1384.1, 608.195)
 shape = SubResource("RectangleShape2D_prkf3")
 
+[node name="shadow" parent="Fertilizer" index="1"]
+position = Vector2(-1386.12, 771.862)
+scale = Vector2(0.533434, 0.137399)
+
+[node name="RayCast2D" parent="Fertilizer" index="2"]
+position = Vector2(-1382.63, 720.916)
+
+[node name="RayCast2D2" parent="Fertilizer" index="3"]
+position = Vector2(-1382.63, 678.916)
+
 [node name="Dirt" parent="." instance=ExtResource("2_76hc5")]
+z_index = 1
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_nml04")
@@ -66,7 +93,18 @@ order = Array[int]([1])
 position = Vector2(851, 698)
 shape = SubResource("RectangleShape2D_f0e8l")
 
+[node name="shadow" parent="Dirt" index="1"]
+position = Vector2(834, 958)
+scale = Vector2(0.604, 0.142)
+
+[node name="RayCast2D" parent="Dirt" index="2"]
+position = Vector2(854.5, 918)
+
+[node name="RayCast2D2" parent="Dirt" index="3"]
+position = Vector2(854.5, 876)
+
 [node name="Seeds" parent="." instance=ExtResource("2_76hc5")]
+z_index = 1
 position = Vector2(958.333, 542.5)
 scale = Vector2(0.499537, 0.499537)
 texture = ExtResource("6_wavin")
@@ -75,6 +113,16 @@ order = Array[int]([2])
 [node name="CollisionShape2D" parent="Seeds/Area2D" index="0"]
 position = Vector2(-846.45, 788.73)
 shape = SubResource("RectangleShape2D_47jn6")
+
+[node name="shadow" parent="Seeds" index="1"]
+position = Vector2(-846.45, 955.885)
+scale = Vector2(0.51848, 0.123596)
+
+[node name="RayCast2D" parent="Seeds" index="2"]
+position = Vector2(-847.045, 921.815)
+
+[node name="RayCast2D2" parent="Seeds" index="3"]
+position = Vector2(-847.045, 879.815)
 
 [node name="hint" type="RichTextLabel" parent="."]
 z_index = 2
@@ -87,6 +135,23 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
 text = "[center]Grow the plant![/center]"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(161, 582, 1743, 568, 2269, 1172, -336, 1164)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(614.5, 742)
+scale = Vector2(0.323, 0.092)
+texture = ExtResource("10_wf61v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(951, 975.5)
+scale = Vector2(0.346, 0.149)
+texture = ExtResource("10_wf61v")
 
 [editable path="Water"]
 [editable path="Fertilizer"]

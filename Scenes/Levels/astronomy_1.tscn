@@ -1,16 +1,18 @@
-[gd_scene load_steps=41 format=3 uid="uid://bm0gyyknk12jh"]
+[gd_scene load_steps=42 format=3 uid="uid://bm0gyyknk12jh"]
 
 [ext_resource type="Script" uid="uid://3ewhecppjtgq" path="res://Scripts/planet_level.gd" id="1_86vja"]
-[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/UI/Main_menu/fonas.png" id="2_ludaq"]
+[ext_resource type="Texture2D" uid="uid://d3pul6ucko0e3" path="res://Assets/Bgs/space.png" id="2_jktsh"]
 [ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_81tmp"]
 [ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_ntdb6"]
 [ext_resource type="Texture2D" uid="uid://1b4hx3vqr23u" path="res://Assets/Planets/mercury.png" id="5_1ie11"]
 [ext_resource type="Texture2D" uid="uid://bhj16fw22qtw6" path="res://Assets/Planets/venus.png" id="6_r1sgf"]
 [ext_resource type="Texture2D" uid="uid://cehkhcjnkt3q6" path="res://Assets/Planets/earth.png" id="7_la6xx"]
+[ext_resource type="Texture2D" uid="uid://cpnkc0dhcdgba" path="res://Assets/Planets/mars.png" id="8_ifbpp"]
 [ext_resource type="Texture2D" uid="uid://ckwf2ks8amcu5" path="res://Assets/Planets/jupiter.png" id="9_brdjf"]
 [ext_resource type="Texture2D" uid="uid://b5x8q1kbxkn1f" path="res://Assets/Planets/saturn.png" id="10_80dgd"]
 [ext_resource type="Texture2D" uid="uid://c5etfkcccc3ew" path="res://Assets/Planets/uranus.png" id="11_jb8eg"]
 [ext_resource type="Texture2D" uid="uid://2c60jvfft2f6" path="res://Assets/Planets/neptune.png" id="12_w1y37"]
+[ext_resource type="Texture2D" uid="uid://btjp75kihlj8w" path="res://Assets/Planets/sun.png" id="13_jktsh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jjmxk"]
 
@@ -53,9 +55,6 @@ radius = 60.0521
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msdoq"]
 radius = 75.5265
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4fbgo"]
-load_path = "res://.godot/imported/mars.png-9e0b7f7ba8b69c5e58ced43a1dee3b4f.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2u5yh"]
 radius = 47.1513
@@ -103,7 +102,7 @@ script = ExtResource("1_86vja")
 modulate = Color(0.517184, 0.517184, 0.517184, 1)
 position = Vector2(960.889, 540.5)
 scale = Vector2(0.500463, 0.500463)
-texture = ExtResource("2_ludaq")
+texture = ExtResource("2_jktsh")
 
 [node name="Mercury_destination" parent="." instance=ExtResource("3_81tmp")]
 position = Vector2(307, 598)
@@ -152,7 +151,6 @@ correct_id = 1
 
 [node name="Sprite2D" parent="Mercury" index="0"]
 position = Vector2(-1, 2)
-scale = Vector2(0.054, 0.054)
 texture = ExtResource("5_1ie11")
 
 [node name="CollisionShape2D" parent="Mercury" index="1"]
@@ -166,7 +164,7 @@ position = Vector2(190, 992)
 correct_id = 2
 
 [node name="Sprite2D" parent="Venus" index="0"]
-scale = Vector2(0.105, 0.105)
+scale = Vector2(0.455, 0.455)
 texture = ExtResource("6_r1sgf")
 
 [node name="CollisionShape2D" parent="Venus" index="1"]
@@ -180,7 +178,7 @@ position = Vector2(414, 972)
 correct_id = 3
 
 [node name="Sprite2D" parent="Earth" index="0"]
-scale = Vector2(0.123, 0.123)
+scale = Vector2(0.853, 0.853)
 texture = ExtResource("7_la6xx")
 
 [node name="CollisionShape2D" parent="Earth" index="1"]
@@ -194,8 +192,7 @@ position = Vector2(1533.91, 990.094)
 correct_id = 4
 
 [node name="Sprite2D" parent="Mars" index="0"]
-scale = Vector2(0.094, 0.094)
-texture = SubResource("CompressedTexture2D_4fbgo")
+texture = ExtResource("8_ifbpp")
 
 [node name="CollisionShape2D" parent="Mars" index="1"]
 shape = SubResource("CircleShape2D_2u5yh")
@@ -208,7 +205,7 @@ position = Vector2(1035, 919)
 correct_id = 5
 
 [node name="Sprite2D" parent="Jupiter" index="0"]
-scale = Vector2(0.283, 0.283)
+scale = Vector2(0.668, 0.668)
 texture = ExtResource("9_brdjf")
 
 [node name="CollisionShape2D" parent="Jupiter" index="1"]
@@ -223,7 +220,7 @@ correct_id = 6
 
 [node name="Sprite2D" parent="Saturn" index="0"]
 rotation = -0.471239
-scale = Vector2(0.354, 0.354)
+scale = Vector2(0.889, 0.889)
 texture = ExtResource("10_80dgd")
 
 [node name="CollisionShape2D" parent="Saturn" index="1"]
@@ -238,7 +235,6 @@ correct_id = 7
 
 [node name="Sprite2D" parent="Uranus" index="0"]
 rotation = 0.436332
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_jb8eg")
 
 [node name="CollisionShape2D" parent="Uranus" index="1"]
@@ -252,7 +248,7 @@ position = Vector2(652, 961)
 correct_id = 8
 
 [node name="Sprite2D" parent="Neptune" index="0"]
-scale = Vector2(0.152, 0.152)
+scale = Vector2(0.457, 0.457)
 texture = ExtResource("12_w1y37")
 
 [node name="CollisionShape2D" parent="Neptune" index="1"]
@@ -275,7 +271,7 @@ text = "[center]Arrange the planets![/center]"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.960784, 1, 0.341176, 1)
 position = Vector2(-264, 576)
-texture = ExtResource("5_1ie11")
+texture = ExtResource("13_jktsh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

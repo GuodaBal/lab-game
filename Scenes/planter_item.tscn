@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2o1adap7mh8i"]
+[gd_scene load_steps=5 format=3 uid="uid://b2o1adap7mh8i"]
 
 [ext_resource type="Texture2D" uid="uid://ctum3vlgdmf6" path="res://icon.svg" id="1_8kp3a"]
 [ext_resource type="Script" uid="uid://bj8oslvm1h7jy" path="res://Scripts/planter_item.gd" id="1_tnj28"]
+[ext_resource type="Texture2D" uid="uid://ctsloe8v0obax" path="res://Assets/Shaders/shadow.png" id="3_0wivh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuix4"]
 size = Vector2(275.544, 302.327)
@@ -16,4 +17,27 @@ script = ExtResource("1_tnj28")
 position = Vector2(-3, 1.5)
 shape = SubResource("RectangleShape2D_fuix4")
 
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+z_as_relative = false
+position = Vector2(0, -23)
+scale = Vector2(0.205, 0.039)
+texture = ExtResource("3_0wivh")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 2000)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, -42)
+target_position = Vector2(0, 20)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

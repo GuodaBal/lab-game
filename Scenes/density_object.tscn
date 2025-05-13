@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://sj05lhda7c5m"]
+[gd_scene load_steps=6 format=3 uid="uid://sj05lhda7c5m"]
 
 [ext_resource type="Script" uid="uid://cjtq81fii7gef" path="res://Scripts/density_object.gd" id="1_fo4f5"]
+[ext_resource type="Texture2D" uid="uid://ctsloe8v0obax" path="res://Assets/Shaders/shadow.png" id="2_64y2j"]
 [ext_resource type="Texture2D" uid="uid://iqvme37cnb2y" path="res://Assets/Densities/object.png" id="2_qfqar"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0vq44"]
@@ -24,9 +25,22 @@ script = ExtResource("1_fo4f5")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mp86l")
 
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+z_as_relative = false
+position = Vector2(3.5, 45)
+scale = Vector2(0.205, 0.06)
+texture = ExtResource("2_64y2j")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 position = Vector2(0, 2.38419e-07)
 scale = Vector2(0.332, 0.44205)
 texture = ExtResource("2_qfqar")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 2000)
+collision_mask = 8
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

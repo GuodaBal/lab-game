@@ -27,7 +27,7 @@ animations = [{
 size = Vector2(860.423, 1363.16)
 
 [node name="Lamp" type="AnimatedSprite2D"]
-position = Vector2(953.778, 536.5)
+position = Vector2(540, 541)
 scale = Vector2(0.503241, 0.503241)
 sprite_frames = SubResource("SpriteFrames_laiu1")
 animation = &"off"
@@ -40,3 +40,5 @@ position = Vector2(-646.366, -209.641)
 shape = SubResource("RectangleShape2D_j7sng")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
