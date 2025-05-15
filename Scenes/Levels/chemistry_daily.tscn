@@ -1,0 +1,286 @@
+[gd_scene load_steps=22 format=3 uid="uid://dj6uydwxrhs5p"]
+
+[ext_resource type="Texture2D" uid="uid://cj37l2vtxwfpn" path="res://Assets/Bgs/whiteboard2.png" id="1_g3rme"]
+[ext_resource type="Script" uid="uid://bxw1wboymydbh" path="res://Scripts/chemistry_daily.gd" id="1_wv7e4"]
+[ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="3_yqoui"]
+[ext_resource type="PackedScene" uid="uid://ckq3itltxqdt6" path="res://Scenes/Item.tscn" id="4_260gl"]
+[ext_resource type="Texture2D" uid="uid://87at0jk0axyi" path="res://Assets/Magnets/magnetukai2.png" id="5_rqulu"]
+[ext_resource type="Texture2D" uid="uid://043s6eh7kdio" path="res://Assets/Magnets/magnetukainew.png" id="6_rqulu"]
+[ext_resource type="Texture2D" uid="uid://dmhb0myuhujas" path="res://Assets/Magnets/magnetukainewa.png" id="7_2fojw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqoui"]
+size = Vector2(1934, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u41j"]
+size = Vector2(24, 1100)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2fojw"]
+bounce = 0.37
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fojw"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(1302, 604, 339, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glw4y"]
+size = Vector2(160, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6g7hw"]
+size = Vector2(170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7lc"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(558, 594, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkrod"]
+atlas = ExtResource("6_rqulu")
+region = Rect2(1674, 606, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glw4y"]
+atlas = ExtResource("6_rqulu")
+region = Rect2(1302, 601, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_260gl"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(929, 598, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g7hw"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(1677, 608, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj658"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(2420, 612, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqulu"]
+atlas = ExtResource("7_2fojw")
+region = Rect2(558, 594, 339, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a74c"]
+atlas = ExtResource("5_rqulu")
+region = Rect2(2049, 614, 339, 339)
+
+[node name="ChemistryDaily" type="Node2D"]
+script = ExtResource("1_wv7e4")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(960.889, 540.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("1_g3rme")
+
+[node name="H_destination" parent="." instance=ExtResource("3_yqoui")]
+show_behind_parent = true
+position = Vector2(698, 329)
+correct_id = 1
+
+[node name="H_destination2" parent="." instance=ExtResource("3_yqoui")]
+show_behind_parent = true
+position = Vector2(700, 604)
+correct_id = 1
+
+[node name="H_destination3" parent="." instance=ExtResource("3_yqoui")]
+show_behind_parent = true
+position = Vector2(349, 604)
+correct_id = 1
+
+[node name="O_destination" parent="." instance=ExtResource("3_yqoui")]
+show_behind_parent = true
+position = Vector2(1056, 329)
+correct_id = 2
+
+[node name="S_destination" parent="." instance=ExtResource("3_yqoui")]
+show_behind_parent = true
+position = Vector2(1654, 604)
+correct_id = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(957, 0)
+shape = SubResource("RectangleShape2D_yqoui")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(957, 1083)
+shape = SubResource("RectangleShape2D_yqoui")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 540)
+shape = SubResource("RectangleShape2D_0u41j")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1914, 540)
+shape = SubResource("RectangleShape2D_0u41j")
+
+[node name="hint" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+offset_top = 75.0
+offset_right = 1917.0
+offset_bottom = 207.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 93
+bbcode_enabled = true
+text = "[center]Solve the equations![/center]"
+
+[node name="H" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(723, 907)
+rotation = 0.0818604
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 1
+
+[node name="Sprite2D" parent="H" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_2fojw")
+
+[node name="CollisionShape2D" parent="H" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="H/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="O" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(1534, 966)
+rotation = -0.0884451
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 2
+
+[node name="Sprite2D" parent="O" index="0"]
+rotation = -0.00326683
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_2d7lc")
+
+[node name="CollisionShape2D" parent="O" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="O/Area2D" index="0"]
+position = Vector2(1, 0.999939)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="S" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(1355, 806)
+rotation = -0.169168
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 3
+
+[node name="Sprite2D" parent="S" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_vkrod")
+
+[node name="CollisionShape2D" parent="S" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="S/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="H2" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(1614, 116)
+rotation = 0.195598
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 1
+
+[node name="Sprite2D" parent="H2" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_glw4y")
+
+[node name="CollisionShape2D" parent="H2" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="H2/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="H3" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(1172, 959)
+rotation = 0.139149
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 1
+
+[node name="Sprite2D" parent="H3" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_260gl")
+
+[node name="CollisionShape2D" parent="H3" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="H3/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="C" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(1792, 332)
+rotation = -0.148316
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 4
+
+[node name="Sprite2D" parent="C" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_6g7hw")
+
+[node name="CollisionShape2D" parent="C" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="C/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="N" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(964, 857)
+rotation = -0.192586
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 5
+
+[node name="Sprite2D" parent="N" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_lj658")
+
+[node name="CollisionShape2D" parent="N" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="N/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="O2" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(131, 390)
+rotation = 0.144126
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 2
+
+[node name="Sprite2D" parent="O2" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_rqulu")
+
+[node name="CollisionShape2D" parent="O2" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="O2/Area2D" index="0"]
+position = Vector2(1, 0.999939)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[node name="S2" parent="." instance=ExtResource("4_260gl")]
+position = Vector2(138, 639)
+rotation = -0.166787
+physics_material_override = SubResource("PhysicsMaterial_2fojw")
+correct_id = 3
+
+[node name="Sprite2D" parent="S2" index="0"]
+scale = Vector2(0.455, 0.455)
+texture = SubResource("AtlasTexture_3a74c")
+
+[node name="CollisionShape2D" parent="S2" index="1"]
+shape = SubResource("RectangleShape2D_glw4y")
+
+[node name="CollisionShape2D" parent="S2/Area2D" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6g7hw")
+
+[editable path="H"]
+[editable path="O"]
+[editable path="S"]
+[editable path="H2"]
+[editable path="H3"]
+[editable path="C"]
+[editable path="N"]
+[editable path="O2"]
+[editable path="S2"]

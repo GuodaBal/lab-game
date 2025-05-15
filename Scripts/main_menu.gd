@@ -5,7 +5,7 @@ func _ready() -> void:
 	
 func _on_button_pressed() -> void:
 	GlobalAudioStreamPlayer.play_click_sound()
-	get_tree().change_scene_to_file("res://Scenes/Levels/physics_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/chemistry_daily.tscn")
 
 
 func _on_options_pressed() -> void:

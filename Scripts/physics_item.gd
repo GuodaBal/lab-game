@@ -52,3 +52,5 @@ func deselect():
 			gravity_scale = 0.0
 			connected_to = distances[closest]
 			distances[closest].occupied = true
+			# Play place sound here on successful connection
+			GlobalAudioStreamPlayer.play_place_sound()
