@@ -85,10 +85,10 @@ position = Vector2(948, 639)
 [node name="hint" type="RichTextLabel" parent="."]
 z_index = 2
 offset_left = 1.0
-offset_top = -5.0
+offset_top = 24.0
 offset_right = 1918.0
-offset_bottom = 127.0
+offset_bottom = 156.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
-text = "[center]Don't mix the liquids![/center]"
+text = "[center]Stack the liquids![/center]"

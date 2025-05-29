@@ -135,14 +135,14 @@ correct_id = 5
 [node name="hint" type="RichTextLabel" parent="."]
 z_index = 2
 offset_left = 1.0
-offset_top = -0.575
+offset_top = 35.0
 offset_right = 1918.0
-offset_bottom = 131.425
+offset_bottom = 167.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
-text = "[center]Hit the dot![/center]"
+text = "[center]Align the lasers to hit the dot![/center]"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1596, 482)

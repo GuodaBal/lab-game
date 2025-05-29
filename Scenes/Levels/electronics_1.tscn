@@ -103,7 +103,7 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 93
 bbcode_enabled = true
-text = "[center]Light the lightbulbs![/center]"
+text = "[center]Complete the electronic diagram![/center]"
 
 [node name="Items" type="Node2D" parent="."]
 y_sort_enabled = true
