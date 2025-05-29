@@ -19,7 +19,7 @@ bounce = 0.37
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fojw"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(1302, 604, 339, 339)
+region = Rect2(1285, 562, 375, 425)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glw4y"]
 size = Vector2(160, 160)
@@ -29,35 +29,35 @@ size = Vector2(170, 170)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d7lc"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(558, 594, 339, 339)
+region = Rect2(539, 571, 376, 386)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vkrod"]
 atlas = ExtResource("6_rqulu")
-region = Rect2(1674, 606, 339, 339)
+region = Rect2(1659, 582, 381, 394)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glw4y"]
 atlas = ExtResource("6_rqulu")
-region = Rect2(1302, 601, 339, 339)
+region = Rect2(1287, 580, 371, 392)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_260gl"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(929, 598, 339, 339)
+region = Rect2(915, 581, 371, 389)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6g7hw"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(1677, 608, 339, 339)
+region = Rect2(1657, 578, 377, 401)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj658"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(2420, 612, 339, 339)
+region = Rect2(2404, 588, 379, 382)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqulu"]
 atlas = ExtResource("7_2fojw")
-region = Rect2(558, 594, 339, 339)
+region = Rect2(536, 574, 377, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3a74c"]
 atlas = ExtResource("5_rqulu")
-region = Rect2(2049, 614, 339, 339)
+region = Rect2(2033, 595, 371, 378)
 
 [node name="ChemistryDaily" type="Node2D"]
 script = ExtResource("1_wv7e4")
@@ -125,6 +125,8 @@ text = "[center]Solve the equations![/center]"
 position = Vector2(723, 907)
 rotation = 0.0818604
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 1
 
 [node name="Sprite2D" parent="H" index="0"]
@@ -132,6 +134,7 @@ scale = Vector2(0.455, 0.455)
 texture = SubResource("AtlasTexture_2fojw")
 
 [node name="CollisionShape2D" parent="H" index="1"]
+visible = false
 shape = SubResource("RectangleShape2D_glw4y")
 
 [node name="CollisionShape2D" parent="H/Area2D" index="0"]
@@ -142,6 +145,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(1534, 966)
 rotation = -0.0884451
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 2
 
 [node name="Sprite2D" parent="O" index="0"]
@@ -160,6 +165,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(1355, 806)
 rotation = -0.169168
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 3
 
 [node name="Sprite2D" parent="S" index="0"]
@@ -177,6 +184,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(1614, 116)
 rotation = 0.195598
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 1
 
 [node name="Sprite2D" parent="H2" index="0"]
@@ -194,6 +203,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(1172, 959)
 rotation = 0.139149
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 1
 
 [node name="Sprite2D" parent="H3" index="0"]
@@ -211,6 +222,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(1792, 332)
 rotation = -0.148316
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 4
 
 [node name="Sprite2D" parent="C" index="0"]
@@ -228,6 +241,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(964, 857)
 rotation = -0.192586
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 5
 
 [node name="Sprite2D" parent="N" index="0"]
@@ -245,6 +260,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(131, 390)
 rotation = 0.144126
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 2
 
 [node name="Sprite2D" parent="O2" index="0"]
@@ -262,6 +279,8 @@ shape = SubResource("RectangleShape2D_6g7hw")
 position = Vector2(138, 639)
 rotation = -0.166787
 physics_material_override = SubResource("PhysicsMaterial_2fojw")
+line_thickness_adj = 3.798
+blur_strength_adj = 0.479
 correct_id = 3
 
 [node name="Sprite2D" parent="S2" index="0"]

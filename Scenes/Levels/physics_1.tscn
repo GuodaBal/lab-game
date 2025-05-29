@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dldqu6cu6uxle"]
+[gd_scene load_steps=18 format=3 uid="uid://dldqu6cu6uxle"]
 
 [ext_resource type="Script" uid="uid://xb110xy1ajyy" path="res://Scripts/physics_1.gd" id="1_e70i3"]
 [ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/Bgs/fonas.png" id="2_k2o5u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wa1613npf70o" path="res://Scenes/lens.tscn" id="4_3ndp0"]
 [ext_resource type="Texture2D" uid="uid://bjoc2e87sc6yr" path="res://Assets/Fizika/lenses2.png" id="5_pec3o"]
 [ext_resource type="PackedScene" uid="uid://ckhcpwibm21bb" path="res://Scenes/item_destination.tscn" id="6_4nopk"]
+[ext_resource type="Texture2D" uid="uid://c3gnehpfkwu1a" path="res://Assets/Fizika/x.png" id="7_e70i3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y68ol"]
 atlas = ExtResource("5_pec3o")
@@ -26,16 +27,6 @@ region = Rect2(1948, 702, 246, 713)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ndp0"]
 atlas = ExtResource("5_pec3o")
 region = Rect2(2463, 709, 249, 695)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y68ol"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e70i3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k2o5u"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xm7bl"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ndp0"]
 
 [sub_resource type="Gradient" id="Gradient_xyh2n"]
 offsets = PackedFloat32Array(0.913793, 0.968966)
@@ -118,27 +109,27 @@ bending_degrees = 3
 
 [node name="Item_destination" parent="." instance=ExtResource("6_4nopk")]
 position = Vector2(267.75, 488)
-texture = SubResource("CompressedTexture2D_y68ol")
+texture = ExtResource("7_e70i3")
 correct_id = 1
 
 [node name="Item_destination2" parent="." instance=ExtResource("6_4nopk")]
 position = Vector2(437.75, 488)
-texture = SubResource("CompressedTexture2D_e70i3")
+texture = ExtResource("7_e70i3")
 correct_id = 2
 
 [node name="Item_destination3" parent="." instance=ExtResource("6_4nopk")]
 position = Vector2(607.75, 488)
-texture = SubResource("CompressedTexture2D_k2o5u")
+texture = ExtResource("7_e70i3")
 correct_id = 3
 
 [node name="Item_destination4" parent="." instance=ExtResource("6_4nopk")]
 position = Vector2(777.75, 488)
-texture = SubResource("CompressedTexture2D_xm7bl")
+texture = ExtResource("7_e70i3")
 correct_id = 4
 
 [node name="Item_destination5" parent="." instance=ExtResource("6_4nopk")]
 position = Vector2(947.75, 488)
-texture = SubResource("CompressedTexture2D_3ndp0")
+texture = ExtResource("7_e70i3")
 correct_id = 5
 
 [node name="hint" type="RichTextLabel" parent="."]

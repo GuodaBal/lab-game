@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bijaxat2wqwql"]
+[gd_scene load_steps=6 format=3 uid="uid://bijaxat2wqwql"]
 
 [ext_resource type="Script" uid="uid://cr86x6xnebckt" path="res://Scripts/main_menu.gd" id="1_eours"]
 [ext_resource type="Theme" uid="uid://dfh7fbwsij8h2" path="res://Assets/UI/Main_menu/buttons.tres" id="3_b4mw7"]
-[ext_resource type="Texture2D" uid="uid://c3u637tjckx7q" path="res://Assets/Bgs/fonas.png" id="4_d04kf"]
-[ext_resource type="Texture2D" uid="uid://i4aoweqljklw" path="res://Assets/UI/Main_menu/menuempty.png" id="5_dhrcb"]
-[ext_resource type="Texture2D" uid="uid://dirg3kjosd14h" path="res://Assets/UI/Main_menu/levelsbutton.png" id="6_lqk4t"]
-[ext_resource type="Texture2D" uid="uid://w7tglr6c4rdh" path="res://Assets/UI/Main_menu/optionsbutton.png" id="7_15lqw"]
-[ext_resource type="Texture2D" uid="uid://l8n8m6ooy417" path="res://Assets/UI/Main_menu/exit.png" id="8_j514d"]
+[ext_resource type="Texture2D" uid="uid://c2wwlgd7clvtw" path="res://Assets/UI/Main_menu/main_menu_mygtukai.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bdk6wvuyqmj06" path="res://Assets/UI/Main_menu/level_menu_fonas.png" id="9_trj04"]
 [ext_resource type="Texture2D" uid="uid://dfmgqvpmkfau3" path="res://Assets/UI/Main_menu/daily.png" id="9_w613r"]
 
 [node name="Main menu" type="Control"]
@@ -18,70 +15,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eours")
 
-[node name="BG" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_d04kf")
+[node name="LevelMenuFonas" type="Sprite2D" parent="."]
+position = Vector2(962.222, 540)
+scale = Vector2(0.500926, 0.500926)
+texture = ExtResource("9_trj04")
 
-[node name="Paper" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_dhrcb")
-
-[node name="Levels" type="Sprite2D" parent="."]
-position = Vector2(960, 539)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_lqk4t")
-
-[node name="Options" type="Sprite2D" parent="."]
-position = Vector2(958.778, 540.5)
-scale = Vector2(0.498611, 0.498611)
-texture = ExtResource("7_15lqw")
-
-[node name="Exit" type="Sprite2D" parent="."]
-position = Vector2(961.556, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_j514d")
+[node name="MainMenuMygtukai" type="Sprite2D" parent="."]
+position = Vector2(962.889, 539)
+scale = Vector2(0.499074, 0.499074)
+texture = ExtResource("3_ce3w2")
 
 [node name="Daily" type="Sprite2D" parent="."]
-position = Vector2(960, 541)
-scale = Vector2(0.499537, 0.499537)
+position = Vector2(1738, 568)
+rotation = 0.0471239
+scale = Vector2(0.525, 0.525)
 texture = ExtResource("9_w613r")
 
 [node name="DailyButon" type="Button" parent="."]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 464.0
-offset_right = 415.0
-offset_bottom = 567.0
-rotation = -0.0436332
+offset_left = 791.0
+offset_top = 443.0
+offset_right = 1170.0
+offset_bottom = 551.0
 theme = ExtResource("3_b4mw7")
 
 [node name="Levelsbutton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 605.0
-offset_right = 395.0
-offset_bottom = 695.0
-rotation = 0.0296706
+offset_left = 788.0
+offset_top = 581.0
+offset_right = 1179.0
+offset_bottom = 682.0
 theme = ExtResource("3_b4mw7")
 
 [node name="OptionsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 750.0
-offset_right = 347.0
-offset_bottom = 840.0
-rotation = -0.0349066
+offset_left = 800.0
+offset_top = 710.0
+offset_right = 1170.0
+offset_bottom = 814.0
 theme = ExtResource("3_b4mw7")
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 867.0
-offset_right = 259.0
-offset_bottom = 957.0
-rotation = 0.0436332
+offset_left = 851.0
+offset_top = 836.0
+offset_right = 1107.0
+offset_bottom = 937.0
 theme = ExtResource("3_b4mw7")
 
 [connection signal="pressed" from="DailyButon" to="." method="_on_button_pressed"]

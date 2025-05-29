@@ -13,4 +13,5 @@ func advance(order, used):
 func _input(event: InputEvent) -> void:
 	super(event)
 	if planter.step == 6:
+		await planter.get_child(0).animation_finished
 		level_complete(true)

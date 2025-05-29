@@ -4,10 +4,15 @@ extends "physics_item.gd"
 @onready var spark = preload("res://Scenes/spark_particle.tscn")
 @onready var sprite = $Sprite2D as Sprite2D
 
+@export var line_thickness_adj = 4.562
+@export var blur_strength_adj = 0.384
+
 func _ready() -> void:
 	super()
 	outline = outline.duplicate()
 	outline.set_shader_parameter("scale", sprite.scale.x)
+	outline.set_shader_parameter("line_thickness", line_thickness_adj)
+	outline.set_shader_parameter("blur_strength", blur_strength_adj)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("slot") && is_selected:

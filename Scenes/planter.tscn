@@ -31,9 +31,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c40tp"]
-size = Vector2(958.442, 1025.97)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_00hdl"]
 animations = [{
 "frames": [{
@@ -74,17 +71,21 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c40tp"]
+size = Vector2(958.442, 1025.97)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" groups=["planter"]]
 scale = Vector2(0.385, 0.385)
 sprite_frames = SubResource("SpriteFrames_tbwll")
 animation = &"1"
 script = ExtResource("2_h0vf3")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_00hdl")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(35.065, 367.533)
 shape = SubResource("RectangleShape2D_c40tp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_00hdl")
