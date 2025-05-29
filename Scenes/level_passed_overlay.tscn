@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c33oxapfeere4" path="res://Scripts/level_passed_overlay.gd" id="1_lehdj"]
 [ext_resource type="Theme" uid="uid://dfh7fbwsij8h2" path="res://Assets/UI/Main_menu/buttons.tres" id="2_g2s44"]
+[ext_resource type="Texture2D" uid="uid://d32d4ilm2v486" path="res://Assets/UI/Pause menu/pause_menu_mygtukai.png" id="3_g2s44"]
 [ext_resource type="Texture2D" uid="uid://beewhgf23mxno" path="res://Assets/UI/Level failed-passed/levelpassed.png" id="3_w42b6"]
-[ext_resource type="Texture2D" uid="uid://c0bnpgw0s2ntt" path="res://Assets/UI/Level failed-passed/levelpassedbuttons.png" id="4_wgrpy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhpsl"]
-atlas = ExtResource("4_wgrpy")
-region = Rect2(1419, 1216, 1069, 242)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w42b6"]
+atlas = ExtResource("3_g2s44")
+region = Rect2(1518, 1055, 852, 244)
 
 [node name="Level_passed" type="Control"]
 top_level = true
@@ -33,17 +33,17 @@ position = Vector2(961.778, 606.75)
 scale = Vector2(0.498843, 0.498843)
 texture = ExtResource("3_w42b6")
 
-[node name="Levelpassedbuttons" type="Sprite2D" parent="."]
-position = Vector2(979.351, 653)
-scale = Vector2(0.510331, 0.510331)
-texture = SubResource("AtlasTexture_mhpsl")
+[node name="PauseMenuMygtukai" type="Sprite2D" parent="."]
+position = Vector2(973, 655)
+scale = Vector2(0.479508, 0.479508)
+texture = SubResource("AtlasTexture_w42b6")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 707.0
-offset_top = 591.0
-offset_right = 1253.0
-offset_bottom = 715.0
+offset_left = 768.0
+offset_top = 596.0
+offset_right = 1178.0
+offset_bottom = 713.0
 theme = ExtResource("2_g2s44")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

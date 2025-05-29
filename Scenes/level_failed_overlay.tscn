@@ -49,6 +49,7 @@ texture = SubResource("AtlasTexture_in8iy")
 
 [node name="Button" type="Button" parent="."]
 z_index = 3
+layout_mode = 0
 offset_left = 710.0
 offset_top = 519.0
 offset_right = 1243.0
@@ -58,6 +59,7 @@ theme_override_font_sizes/font_size = 47
 
 [node name="Button2" type="Button" parent="."]
 z_index = 3
+layout_mode = 0
 offset_left = 769.0
 offset_top = 674.0
 offset_right = 1178.0
